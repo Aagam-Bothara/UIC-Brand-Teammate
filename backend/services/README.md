@@ -69,7 +69,9 @@ With LLM Service complete (Task 3.3), proceed to:
 
 1. **Task 3.4**: Implement change tag parsing and HTML generation
 2. **Task 3.5**: Add complexity scoring for model selection
-3. **Task 3.6**: Implement text diffing as fallback
+3. **Task 3.6**: Text diffing fallback implemented in `text_diff.py`
+4. **Task 3.7**: Structured refinement handling implemented in `refinement.py`
+5. **Next**: Task 3.8 LLM API routes
 
 ### Support
 

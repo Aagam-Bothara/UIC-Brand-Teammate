@@ -9,14 +9,18 @@ for text rewriting, issue detection, and refinement operations.
 import json
 import logging
 import os
+import re
+import threading
 import time
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import boto3
 from botocore.config import Config
 from botocore.exceptions import ClientError
+
+from .refinement import RefinementHandler
 
 
 @dataclass
@@ -26,6 +30,10 @@ class LLMResponse:
     model_id: str
     latency_ms: float
     token_usage: Optional[Dict[str, int]] = None
+    selection: Optional[Dict[str, Any]] = None
+    estimated_cost_usd: Optional[float] = None
+    estimated_savings_usd: Optional[float] = None
+    refinement: Optional[Dict[str, Any]] = None
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for logging."""
@@ -33,8 +41,26 @@ class LLMResponse:
             'text_length': len(self.text),
             'model_id': self.model_id,
             'latency_ms': self.latency_ms,
-            'token_usage': self.token_usage
+            'token_usage': self.token_usage,
+            'selection': self.selection,
+            'estimated_cost_usd': self.estimated_cost_usd,
+            'estimated_savings_usd': self.estimated_savings_usd,
+            'refinement': self.refinement
         }
+
+
+@dataclass(frozen=True)
+class ModelSelectionDecision:
+    """Explainable result of adaptive model selection."""
+    model_id: str
+    model_name: str
+    complexity_score: float
+    reason: str
+    metrics: Dict[str, Any]
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return a JSON-serializable decision for logs and API metadata."""
+        return asdict(self)
 
 
 class LLMServiceError(Exception):
@@ -82,6 +108,13 @@ class LLMService:
     
     # Model selection thresholds
     WORD_COUNT_THRESHOLD = 500  # Use Sonnet if > 500 words
+    COMPLEXITY_SCORE_THRESHOLD = 50.0
+
+    # USD per one million tokens; configurable without a deployment.
+    HAIKU_INPUT_COST_PER_MILLION = 0.25
+    HAIKU_OUTPUT_COST_PER_MILLION = 1.25
+    SONNET_INPUT_COST_PER_MILLION = 3.00
+    SONNET_OUTPUT_COST_PER_MILLION = 15.00
     
     def __init__(self, bedrock_client: Optional[Any] = None):
         """
@@ -93,6 +126,17 @@ class LLMService:
         """
         self.logger = self._setup_logging()
         self.logger.info("Initializing LLMService")
+        self._cost_lock = threading.Lock()
+        self._cost_metrics = {
+            'requests_with_usage': 0,
+            'haiku_requests': 0,
+            'sonnet_requests': 0,
+            'actual_cost_usd': 0.0,
+            'sonnet_baseline_cost_usd': 0.0,
+            'estimated_savings_usd': 0.0,
+        }
+        self._pricing = self._load_pricing()
+        self.refinement_handler = RefinementHandler()
         
         # Initialize Bedrock client
         if bedrock_client:
@@ -159,7 +203,8 @@ class LLMService:
         )
         
         # Select appropriate model
-        model_id = self._select_model(original_text)
+        decision = self.select_model(original_text, issues=issues, task="rewrite")
+        model_id = decision.model_id
         
         # Invoke model with retry logic
         response = self._invoke_model_with_retry(
@@ -169,6 +214,7 @@ class LLMService:
             max_tokens=4000,
             temperature=0.5
         )
+        response.selection = decision.to_dict()
         
         self.logger.info(
             f"Text rewrite completed (model: {model_id}, "
@@ -221,8 +267,8 @@ class LLMService:
             guidelines_context=guidelines_text
         )
         
-        # Use Haiku for detection (faster, cheaper)
-        model_id = self.HAIKU_MODEL_ID
+        decision = self.select_model(text_to_analyze, task="detection")
+        model_id = decision.model_id
         
         # Invoke model
         response = self._invoke_model_with_retry(
@@ -232,6 +278,7 @@ class LLMService:
             max_tokens=2000,
             temperature=0.3  # Lower temperature for more consistent JSON
         )
+        response.selection = decision.to_dict()
         
         # Parse JSON response
         try:
@@ -249,7 +296,9 @@ class LLMService:
         refinement_request: str,
         audience: str,
         channel: str,
-        context: Optional[str] = None
+        context: Optional[str] = None,
+        selection_start: Optional[int] = None,
+        selection_end: Optional[int] = None
     ) -> LLMResponse:
         """
         Apply user-requested refinements to text.
@@ -261,7 +310,9 @@ class LLMService:
             refinement_request: User's refinement request
             audience: Target audience
             channel: Communication channel
-            context: Optional additional context
+            context: Optional additional factual context
+            selection_start: Optional inclusive character offset for selected text
+            selection_end: Optional exclusive character offset for selected text
         
         Returns:
             LLMResponse with refined text
@@ -269,46 +320,25 @@ class LLMService:
         Raises:
             ModelInvocationError: If model invocation fails after retries
         """
+        plan = self.refinement_handler.plan(
+            current_text, refinement_request, selection_start, selection_end
+        )
         self.logger.info(
             f"Starting text refinement (audience: {audience}, channel: {channel}, "
             f"request: {refinement_request[:100]}...)"
         )
         
-        # Build refinement prompt
-        user_prompt = f"""# Text Refinement Request
+        user_prompt = self.refinement_handler.build_prompt(
+            current_text, plan, audience, channel,
+            self._get_reading_level(audience), context
+        )
 
-You are refining a UIC communication based on a user's specific request.
-
-## Context
-
-**Target Audience**: {audience}
-**Communication Channel**: {channel}
-
-## Current Text
-
-{current_text}
-
-## User's Refinement Request
-
-{refinement_request}
-
-{f'## Additional Context\n\n{context}\n' if context else ''}
-
-## Instructions
-
-Apply the user's requested changes while maintaining:
-- UIC brand compliance
-- Accessibility standards
-- Appropriate tone for the audience and channel
-- Natural flow and readability
-
-Provide only the refined text, without explanations or metadata.
-
-Begin your refined version now:
-"""
-        
-        # Select model based on text length
-        model_id = self._select_model(current_text)
+        decision = self.select_model(
+            current_text,
+            refinement_request=refinement_request,
+            task="refinement"
+        )
+        model_id = decision.model_id
         
         # Invoke model
         response = self._invoke_model_with_retry(
@@ -318,6 +348,11 @@ Begin your refined version now:
             max_tokens=4000,
             temperature=0.5
         )
+        response.text = self.refinement_handler.merge_response(
+            current_text, response.text, plan
+        )
+        response.selection = decision.to_dict()
+        response.refinement = plan.to_dict()
         
         self.logger.info(
             f"Text refinement completed (model: {model_id}, "
@@ -459,29 +494,205 @@ Begin your refined version now:
         
         return "\n".join(formatted)
     
-    def _select_model(self, text: str) -> str:
+    def calculate_complexity_score(
+        self,
+        text: str,
+        issues: Optional[List[Dict[str, Any]]] = None,
+        refinement_request: Optional[str] = None
+    ) -> Tuple[float, Dict[str, Any]]:
+        """Calculate a deterministic 0-100 document complexity score.
+
+        The score balances document length (45 points), sentence complexity
+        (20), vocabulary complexity (15), detected issue burden (15), and a
+        multi-step refinement request (5). It uses inexpensive local heuristics,
+        so selection never requires another model call.
         """
-        Select appropriate model based on text complexity.
-        
-        Args:
-            text: Input text
-        
-        Returns:
-            Model ID (Haiku or Sonnet)
-        """
-        word_count = len(text.split())
-        
+        if not isinstance(text, str):
+            raise TypeError("text must be a string")
+
+        words = re.findall(r"\b[\w'-]+\b", text, flags=re.UNICODE)
+        sentences = [part for part in re.split(r"[.!?]+", text) if part.strip()]
+        word_count = len(words)
+        sentence_count = max(len(sentences), 1)
+        average_sentence_length = word_count / sentence_count
+        long_word_count = sum(1 for word in words if len(word.strip("'-")) >= 8)
+        long_word_ratio = long_word_count / max(word_count, 1)
+
+        issue_list = issues or []
+        severity_weights = {'low': 0.5, 'medium': 1.0, 'high': 2.0, 'critical': 3.0}
+        issue_weight = sum(
+            severity_weights.get(str(issue.get('severity', 'medium')).lower(), 1.0)
+            for issue in issue_list
+        )
+
+        request = refinement_request or ""
+        request_words = re.findall(r"\b[\w'-]+\b", request, flags=re.UNICODE)
+        multi_step_markers = len(re.findall(
+            r"\b(?:and|also|then|while|but|except|preserve|compare|restructure)\b",
+            request,
+            flags=re.IGNORECASE
+        ))
+        request_complexity = min(
+            1.0,
+            (len(request_words) / 40.0) + (multi_step_markers / 4.0)
+        )
+
+        components = {
+            'length': min(word_count / self.WORD_COUNT_THRESHOLD, 1.0) * 45.0,
+            'sentence_complexity': min(average_sentence_length / 30.0, 1.0) * 20.0,
+            'vocabulary_complexity': min(long_word_ratio / 0.30, 1.0) * 15.0,
+            'issue_burden': min(issue_weight / 10.0, 1.0) * 15.0,
+            'refinement_complexity': request_complexity * 5.0,
+        }
+        score = round(min(sum(components.values()), 100.0), 2)
+        metrics = {
+            'word_count': word_count,
+            'sentence_count': len(sentences),
+            'average_sentence_length': round(average_sentence_length, 2),
+            'long_word_ratio': round(long_word_ratio, 4),
+            'issue_count': len(issue_list),
+            'weighted_issue_count': round(issue_weight, 2),
+            'components': {name: round(value, 2) for name, value in components.items()},
+        }
+        return score, metrics
+
+    def select_model(
+        self,
+        text: str,
+        issues: Optional[List[Dict[str, Any]]] = None,
+        refinement_request: Optional[str] = None,
+        task: str = "general"
+    ) -> ModelSelectionDecision:
+        """Select Haiku or Sonnet and return an explainable decision."""
+        score, metrics = self.calculate_complexity_score(
+            text,
+            issues=issues,
+            refinement_request=refinement_request
+        )
+        word_count = metrics['word_count']
+
         if word_count > self.WORD_COUNT_THRESHOLD:
-            self.logger.debug(
-                f"Selected Sonnet (word_count: {word_count} > {self.WORD_COUNT_THRESHOLD})"
-            )
-            return self.SONNET_MODEL_ID
+            model_id = self.SONNET_MODEL_ID
+            reason = f"word_count_above_{self.WORD_COUNT_THRESHOLD}"
+        elif score >= self.COMPLEXITY_SCORE_THRESHOLD:
+            model_id = self.SONNET_MODEL_ID
+            reason = f"complexity_score_at_least_{self.COMPLEXITY_SCORE_THRESHOLD:g}"
         else:
-            self.logger.debug(
-                f"Selected Haiku (word_count: {word_count} <= {self.WORD_COUNT_THRESHOLD})"
+            model_id = self.HAIKU_MODEL_ID
+            reason = "simple_content_cost_optimized"
+
+        decision = ModelSelectionDecision(
+            model_id=model_id,
+            model_name="sonnet" if model_id == self.SONNET_MODEL_ID else "haiku",
+            complexity_score=score,
+            reason=reason,
+            metrics={**metrics, 'task': task}
+        )
+        self.logger.info(
+            "model_selection %s",
+            json.dumps(decision.to_dict(), sort_keys=True)
+        )
+        return decision
+
+    def _select_model(self, text: str) -> str:
+        """Return only the model ID for backward compatibility."""
+        return self.select_model(text).model_id
+
+    def _load_pricing(self) -> Dict[str, Dict[str, float]]:
+        """Load configurable token rates used only for cost estimation."""
+        def rate(name: str, default: float) -> float:
+            try:
+                value = float(os.getenv(name, str(default)))
+                return value if value >= 0 else default
+            except ValueError:
+                self.logger.warning("Invalid %s; using default %.4f", name, default)
+                return default
+
+        return {
+            self.HAIKU_MODEL_ID: {
+                'input': rate(
+                    'BEDROCK_HAIKU_INPUT_COST_PER_MILLION',
+                    self.HAIKU_INPUT_COST_PER_MILLION
+                ),
+                'output': rate(
+                    'BEDROCK_HAIKU_OUTPUT_COST_PER_MILLION',
+                    self.HAIKU_OUTPUT_COST_PER_MILLION
+                ),
+            },
+            self.SONNET_MODEL_ID: {
+                'input': rate(
+                    'BEDROCK_SONNET_INPUT_COST_PER_MILLION',
+                    self.SONNET_INPUT_COST_PER_MILLION
+                ),
+                'output': rate(
+                    'BEDROCK_SONNET_OUTPUT_COST_PER_MILLION',
+                    self.SONNET_OUTPUT_COST_PER_MILLION
+                ),
+            },
+        }
+
+    def _estimate_cost(self, model_id: str, token_usage: Dict[str, int]) -> float:
+        pricing = self._pricing.get(model_id, self._pricing[self.SONNET_MODEL_ID])
+        return (
+            max(int(token_usage.get('input_tokens', 0)), 0) * pricing['input']
+            + max(int(token_usage.get('output_tokens', 0)), 0) * pricing['output']
+        ) / 1_000_000
+
+    def _record_cost(self, response: LLMResponse) -> None:
+        """Attach request estimates and update Lambda-instance aggregate savings."""
+        if not response.token_usage:
+            return
+        actual_cost = self._estimate_cost(response.model_id, response.token_usage)
+        baseline_cost = self._estimate_cost(self.SONNET_MODEL_ID, response.token_usage)
+        savings = max(baseline_cost - actual_cost, 0.0)
+        response.estimated_cost_usd = round(actual_cost, 8)
+        response.estimated_savings_usd = round(savings, 8)
+
+        with self._cost_lock:
+            self._cost_metrics['requests_with_usage'] += 1
+            key = (
+                'haiku_requests'
+                if response.model_id == self.HAIKU_MODEL_ID
+                else 'sonnet_requests'
             )
-            return self.HAIKU_MODEL_ID
-    
+            self._cost_metrics[key] += 1
+            self._cost_metrics['actual_cost_usd'] += actual_cost
+            self._cost_metrics['sonnet_baseline_cost_usd'] += baseline_cost
+            self._cost_metrics['estimated_savings_usd'] += savings
+
+        self.logger.info(
+            "model_cost %s",
+            json.dumps({
+                'model_id': response.model_id,
+                'token_usage': response.token_usage,
+                'estimated_cost_usd': response.estimated_cost_usd,
+                'estimated_savings_usd': response.estimated_savings_usd,
+                'baseline': 'all_sonnet',
+            }, sort_keys=True)
+        )
+
+    def get_cost_metrics(self) -> Dict[str, Any]:
+        """Return cost and savings estimates for this service instance."""
+        with self._cost_lock:
+            metrics = dict(self._cost_metrics)
+        for key in (
+            'actual_cost_usd',
+            'sonnet_baseline_cost_usd',
+            'estimated_savings_usd'
+        ):
+            metrics[key] = round(metrics[key], 8)
+        baseline = metrics['sonnet_baseline_cost_usd']
+        metrics['savings_percentage'] = round(
+            (metrics['estimated_savings_usd'] / baseline * 100.0)
+            if baseline else 0.0,
+            2
+        )
+        metrics['pricing_usd_per_million_tokens'] = {
+            'haiku': dict(self._pricing[self.HAIKU_MODEL_ID]),
+            'sonnet': dict(self._pricing[self.SONNET_MODEL_ID]),
+        }
+        return metrics
+
     def _invoke_model_with_retry(
         self,
         model_id: str,
@@ -549,12 +760,14 @@ Begin your refined version now:
                     f"latency: {latency_ms:.0f}ms, tokens: {token_usage})"
                 )
                 
-                return LLMResponse(
+                result = LLMResponse(
                     text=response_text,
                     model_id=model_id,
                     latency_ms=latency_ms,
                     token_usage=token_usage
                 )
+                self._record_cost(result)
+                return result
             
             except ClientError as e:
                 error_code = e.response['Error']['Code']

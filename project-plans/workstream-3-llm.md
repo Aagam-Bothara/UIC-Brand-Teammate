@@ -185,47 +185,82 @@ c:\Users\tomasm\Desktop\UIC Enterprise AI Hackathon\.kiro\specs\bedrock-setup\
 
 ---
 
-### Model Selection
-- [ ] **Task 3.5**: Implement adaptive model selection logic
-- [ ] **Task 3.5**: Calculate complexity scores
-- [ ] **Task 3.5**: Log model selection decisions
-- [ ] **Task 3.5**: Track cost savings
+### Model Selection - COMPLETED
+- [x] **Task 3.5**: Implement adaptive model selection logic
+- [x] **Task 3.5**: Calculate complexity scores
+- [x] **Task 3.5**: Log model selection decisions
+- [x] **Task 3.5**: Track cost savings
 
-**Status**: Not started  
-**Dependencies**: Task 3.3 must be complete
+**Status**: Implementation complete.
+
+**Implementation Details**:
+  - Calculates a deterministic 0-100 complexity score from text length, sentence length, vocabulary complexity, issue severity, and refinement-request complexity
+  - Selects Sonnet for text over 500 words or a complexity score of 50 or higher; otherwise selects Haiku
+  - Applies adaptive selection to rewrite, issue-detection, and refinement requests
+  - Emits structured `model_selection` and `model_cost` events for CloudWatch-compatible logging
+  - Estimates actual request cost and savings against an all-Sonnet baseline using Bedrock token usage
+  - Supports environment-variable overrides for per-million-token pricing
+  - Preserves the existing `_select_model(text)` model-ID interface for compatibility
+
+**Files Updated**:
+  - `backend/services/llm_service.py` - Complexity scoring, explainable selection decisions, and cost metrics
+  - `backend/test_model_selection.py` - Six offline unit tests using a fake Bedrock client
+  - `backend/docs/LLM_SERVICE.md` - Task 3.5 behavior, configuration, and cost-tracking documentation
+
+**Validation**:
+  - `git diff --check` passes
+  - Runtime test execution is pending installation of a functional Python interpreter; AWS credentials are not required for the new offline tests
+
+**To Test**: Run `pytest backend/test_model_selection.py`
+
+**Dependencies**: Task 3.3 - COMPLETED
 
 ---
 
 ### Diff & Refinement
-- [ ] **Task 3.6**: Implement text diffing with difflib
-- [ ] **Task 3.6**: Generate change annotations from diffs
-- [ ] **Task 3.7**: Implement refinement handling
-- [ ] **Task 3.7**: Support common refinement patterns
+- [x] **Task 3.6**: Implement text diffing with difflib
+- [x] **Task 3.6**: Generate change annotations from diffs
+- [x] **Task 3.7**: Implement refinement handling
+- [x] **Task 3.7**: Support common refinement patterns
 
-**Status**: Not started  
+**Task 3.6 Status**: Implementation complete. The offline `TextDiffer` fallback
+generates insert/delete/replace annotations, dual-text character offsets,
+stable change IDs, ruleset metadata, escaped side-by-side HTML, operation
+statistics, and JSON-ready results. See `backend/services/text_diff.py`,
+`backend/test_text_diff.py`, and `backend/docs/TEXT_DIFF.md`.
+
+**Task 3.7 Status**: Implementation complete. Refinement requests are
+normalized into structured plans before model invocation. The service supports
+shorten, expand, formal, casual, simplify, welcoming, engaging, and active-voice
+patterns, including compound requests and custom fallbacks. Optional character
+offsets constrain edits to selected text, existing change tags are preserved,
+and response metadata exposes the applied patterns and rulesets. See
+backend/services/refinement.py and backend/test_refinement.py.
 **Dependencies**: Tasks 3.3 and 3.4 must be complete
 
 ---
 
 ### API & Documentation
-- [ ] **Task 3.8**: Create /backend/api/llm_routes.py
-- [ ] **Task 3.8**: Implement rewrite/refine/explain endpoints
-- [ ] **Task 3.8**: Add OpenAPI documentation
+- [x] **Task 3.8**: Create /backend/api/llm_routes.py
+- [x] **Task 3.8**: Implement rewrite/refine/explain endpoints
+- [x] **Task 3.8**: Add OpenAPI documentation
 - [ ] **Task 3.9**: Create /docs/LLM_SERVICE.md
 - [ ] **Task 3.9**: Create /docs/PROMPTS.md
 - [ ] **Task 3.9**: Provide mock data for other teams
 
-**Status**: Not started  
+**Task 3.8 Status**: Implementation complete. The FastAPI router exposes `POST /api/llm/rewrite`, `POST /api/llm/refine`, and `POST /api/llm/explain` with typed OpenAPI contracts, parsed progressive-reveal output, deterministic diffs, and model metadata.
+
+**Status**: Task 3.8 complete; Task 3.9 not started
 **Dependencies**: All previous tasks (3.1-3.7) must be complete
 
 ---
 
 ## Progress Summary
 
-**Completed**: 4/9 tasks (Tasks 3.1, 3.2, 3.3, 3.4) ✅  
+**Completed**: 8/9 tasks (Tasks 3.1-3.8)
 **In Progress**: 0/9 tasks  
-**Remaining**: 5/9 tasks  
-**Overall Progress**: 44% complete
+**Remaining**: 1/9 tasks
+**Overall Progress**: 89% complete
 
 ## Notes
 
@@ -233,7 +268,11 @@ c:\Users\tomasm\Desktop\UIC Enterprise AI Hackathon\.kiro\specs\bedrock-setup\
 - **Task 3.2 Complete**: Prompt templates created and validated. All tests passing.
 - **Task 3.3 Complete**: LLM Service implemented with all required features. Run `python backend/test_llm_service.py` to test.
 - **Task 3.4 Complete**: Change Parser implemented with tag parsing, HTML generation, and malformed tag handling. Run `python backend/examples/change_parser_demo.py` for demo (no AWS required).
-- **Next Priority**: Task 3.5 (Model Selection) - Already implemented in LLMService, may need documentation update.
+- **Task 3.5 Complete**: Adaptive model selection now uses explainable complexity scoring and tracks estimated savings against an all-Sonnet baseline.
+- **Task 3.6 Complete**: Standard-library text diffing provides annotated, frontend-ready fallback output when LLM tags fail.
+- **Task 3.7 Complete**: Structured refinement planning supports common and custom chat requests plus selected-text scope.
+- **Task 3.8 Complete**: Typed FastAPI rewrite, refine, and explain routes provide OpenAPI contracts and frontend-ready parsed/diff output.
+- **Next Priority**: Task 3.9 (service and prompt documentation plus mock data).
 - **AWS Credentials**: Supply temporary workshop credentials through environment variables; never commit credential files.
 - **Design Docs**: Full technical specifications are in `.kiro/specs/bedrock-setup/`
 - **Prompt Validation**: Run `.\backend\prompts\validate_prompts.ps1` to verify prompt templates (all tests pass).
@@ -260,8 +299,8 @@ backend/prompts/
 - `[AUDIENCE_TONE]...[/AUDIENCE_TONE]` - Audience-specific tone adjustments
 
 ### Model Selection Guidelines (Task 3.5)
-- **Claude Haiku**: Text < 500 words, simple issues, faster response (~2-3 seconds)
-- **Claude Sonnet**: Text > 500 words, complex issues, higher quality (~4-6 seconds)
+- **Claude Haiku**: Text at or below 500 words with a complexity score below 50; optimized for speed and cost
+- **Claude Sonnet**: Text over 500 words or a complexity score of 50 or higher; optimized for complex requests
 
 ### Reading Level Targets (from SPEC)
 - **Students**: Grade 8 (Flesch-Kincaid)

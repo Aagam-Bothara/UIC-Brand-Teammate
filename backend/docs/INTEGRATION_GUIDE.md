@@ -48,6 +48,13 @@ print(llm_response.text)
 # Step 2: Parse tags and generate HTML
 parse_result = parse_changes(llm_response.text)
 
+# If the model omitted or malformed tags, generate deterministic annotations.
+if parse_result.warnings or not parse_result.changes:
+    from services.text_diff import diff_text
+    diff_result = diff_text(original_text, parse_result.plain_text)
+else:
+    diff_result = None
+
 # Step 3: Use the results
 print("\nPlain text:")
 print(parse_result.plain_text)
@@ -59,6 +66,10 @@ print("\nStatistics:")
 print(parse_result.stats)
 # {'BRAND': 1, 'ACCESSIBILITY': 0, ...}
 ```
+
+When `diff_result` is present, use its `annotations`, `original_html`, and
+`revised_html` fields for the comparison UI. See `TEXT_DIFF.md` for the full
+fallback contract. An unchanged rewrite returns zero annotations and is valid.
 
 ## API Endpoint Integration
 

@@ -110,24 +110,24 @@
 ## 🟣 Workstream 3: LLM Integration & Rewrite Logic (Team Member 3)
 
 ### Bedrock Setup
-- [ ] **Task 3.1**: Configure boto3 for bedrock-runtime
-- [ ] **Task 3.1**: Request model access (Haiku & Sonnet)
-- [ ] **Task 3.1**: Store model IDs in Parameter Store
-- [ ] **Task 3.1**: Test connection with simple prompts
+- [x] **Task 3.1**: Configure boto3 for bedrock-runtime
+- [x] **Task 3.1**: Request model access (Haiku & Sonnet)
+- [x] **Task 3.1**: Store model IDs in Parameter Store
+- [x] **Task 3.1**: Test connection with simple prompts
 
 ### Prompt Engineering
-- [ ] **Task 3.2**: Create /backend/prompts/ directory
-- [ ] **Task 3.2**: Create system_prompt.txt
-- [ ] **Task 3.2**: Create ewrite_prompt_template.txt
-- [ ] **Task 3.2**: Create detection_prompt_template.txt
-- [ ] **Task 3.2**: Test prompts for proper output format
+- [x] **Task 3.2**: Create /backend/prompts/ directory
+- [x] **Task 3.2**: Create system_prompt.txt
+- [x] **Task 3.2**: Create rewrite_prompt_template.txt
+- [x] **Task 3.2**: Create detection_prompt_template.txt
+- [x] **Task 3.2**: Test prompts for proper output format
 
 ### LLM Service
-- [ ] **Task 3.3**: Create /backend/services/llm_service.py
-- [ ] **Task 3.3**: Implement LLMService class
-- [ ] **Task 3.3**: Add retry logic with exponential backoff
-- [ ] **Task 3.3**: Add error handling for all failure modes
-- [ ] **Task 3.3**: Add CloudWatch logging
+- [x] **Task 3.3**: Create /backend/services/llm_service.py
+- [x] **Task 3.3**: Implement LLMService class
+- [x] **Task 3.3**: Add retry logic with exponential backoff
+- [x] **Task 3.3**: Add error handling for all failure modes
+- [x] **Task 3.3**: Add CloudWatch logging
 
 ### Change Tagging
 - [x] **Task 3.4**: Implement change tag parsing
@@ -136,21 +136,21 @@
 - [x] **Task 3.4**: Add fallback for malformed tags
 
 ### Model Selection
-- [ ] **Task 3.5**: Implement adaptive model selection logic
-- [ ] **Task 3.5**: Calculate complexity scores
-- [ ] **Task 3.5**: Log model selection decisions
-- [ ] **Task 3.5**: Track cost savings
+- [x] **Task 3.5**: Implement adaptive model selection logic
+- [x] **Task 3.5**: Calculate complexity scores
+- [x] **Task 3.5**: Log model selection decisions
+- [x] **Task 3.5**: Track cost savings
 
 ### Diff & Refinement
-- [ ] **Task 3.6**: Implement text diffing with difflib
-- [ ] **Task 3.6**: Generate change annotations from diffs
-- [ ] **Task 3.7**: Implement refinement handling
-- [ ] **Task 3.7**: Support common refinement patterns
+- [x] **Task 3.6**: Implement text diffing with difflib
+- [x] **Task 3.6**: Generate change annotations from diffs
+- [x] **Task 3.7**: Implement refinement handling
+- [x] **Task 3.7**: Support common refinement patterns
 
 ### API & Documentation
-- [ ] **Task 3.8**: Create /backend/api/llm_routes.py
-- [ ] **Task 3.8**: Implement rewrite/refine/explain endpoints
-- [ ] **Task 3.8**: Add OpenAPI documentation
+- [x] **Task 3.8**: Create /backend/api/llm_routes.py
+- [x] **Task 3.8**: Implement rewrite/refine/explain endpoints
+- [x] **Task 3.8**: Add OpenAPI documentation
 - [ ] **Task 3.9**: Create /docs/LLM_SERVICE.md
 - [ ] **Task 3.9**: Create /docs/PROMPTS.md
 - [ ] **Task 3.9**: Provide mock data for other teams

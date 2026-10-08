@@ -731,3 +731,44 @@ With Task 3.3 complete, proceed to:
 **Task**: 3.3 - LLM Service Implementation  
 **Status**: Complete ✅  
 **Last Updated**: 2026-10-08
+
+---
+
+## Adaptive Model Selection (Task 3.5)
+
+`select_model()` returns a `ModelSelectionDecision` with the selected model, a 0-100 complexity score, the routing reason, and component metrics. The score is computed locally from document length, average sentence length, long-word ratio, rule issue severity, and refinement-request complexity. Documents over 500 words always use Sonnet; shorter documents use Sonnet at a score of 50 or higher and Haiku otherwise.
+
+All rewrite, detection, and refinement calls use this selector. Each decision is emitted as a structured `model_selection` log entry suitable for CloudWatch. The legacy `_select_model(text)` helper still returns a model ID for compatibility.
+
+When Bedrock returns token usage, each `LLMResponse` includes `estimated_cost_usd` and `estimated_savings_usd`. `get_cost_metrics()` returns service-instance totals against an all-Sonnet baseline. Rates are USD per one million tokens and can be overridden with:
+
+- `BEDROCK_HAIKU_INPUT_COST_PER_MILLION`
+- `BEDROCK_HAIKU_OUTPUT_COST_PER_MILLION`
+- `BEDROCK_SONNET_INPUT_COST_PER_MILLION`
+- `BEDROCK_SONNET_OUTPUT_COST_PER_MILLION`
+
+These values are estimates for observability, not billing records. Configure them to current contracted AWS rates before using the totals for financial reporting.
+
+---
+
+## Refinement Handling (Task 3.7)
+
+The refine_text method normalizes chat requests before invoking Bedrock.
+Recognized patterns include shorten, expand, formal, casual, simplify,
+welcoming, engaging, and active voice. Multiple patterns can be combined, while
+requests that do not match a preset remain supported as custom refinements.
+
+Pass selection_start and selection_end as zero-based, half-open character
+offsets to refine only part of a document. Both offsets are required together,
+must describe a non-empty in-range selection, and cause the model to return only
+replacement text for that span. The service then reconstructs the document
+locally, so unselected text is preserved exactly.
+
+The generated prompt preserves facts and existing change tags, forbids invented
+details, applies the audience reading-level target, and requests tags for new
+changes. LLMResponse.refinement contains JSON-ready pattern, ruleset, and
+selection metadata for API consumers.
+
+Offline validation:
+
+    pytest backend/test_refinement.py
