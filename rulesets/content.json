@@ -1,0 +1,443 @@
+{
+  "ruleset_id": "content",
+  "ruleset_name": "Content & Style Rules",
+  "description": "UIC Editorial and Style Guide (AP-based, with UIC departures) and channel checks.",
+  "enabled": true,
+  "highlight_color": "#F59E0B",
+  "rules": [
+    {
+      "rule_id": "content-001",
+      "name": "\"email\" spelling",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\be-mail(s?)\\b",
+      "message": "Spell it \"email\" (no hyphen).",
+      "source": "UIC Editorial guide: Email",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "email\\1"
+    },
+    {
+      "rule_id": "content-002",
+      "name": "\"website\" spelling",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\bweb[ -]site(s?)\\b",
+      "message": "Spell it \"website\", one word.",
+      "source": "UIC Editorial guide: Web",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "website\\1"
+    },
+    {
+      "rule_id": "content-003",
+      "name": "Time format",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "time_format",
+      "message": "Lowercase a.m./p.m. with periods, omit \":00\", and use noon/midnight (\"4 p.m.\", not \"4:00 PM\").",
+      "source": "UIC Editorial guide: a.m./p.m.; Time",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-004",
+      "name": "No \"12 noon\"",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b12(?::00)?\\s+(noon|midnight)\\b",
+      "message": "Write \"noon\" or \"midnight\" (never \"12 noon\").",
+      "source": "UIC Editorial guide: Time",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1"
+    },
+    {
+      "rule_id": "content-005",
+      "name": "No st/nd/rd/th in dates",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\.?\\s+\\d{1,2})(?:st|nd|rd|th)\\b",
+      "message": "Use numerals without -st, -nd, -rd or -th (\"May 10\").",
+      "source": "UIC Editorial guide: Dates",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1"
+    },
+    {
+      "rule_id": "content-006",
+      "name": "Wordy phrase",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "in order to": "to",
+        "due to the fact that": "because",
+        "at this point in time": "now",
+        "at this time": "now",
+        "in the event that": "if",
+        "for the purpose of": "for",
+        "prior to": "before",
+        "with regard to": "about",
+        "in regards to": "about",
+        "a large number of": "many",
+        "in close proximity to": "near",
+        "on a daily basis": "daily"
+      },
+      "message": "Cut filler; keep copy short, sharp and direct.",
+      "source": "UIC Voice and tone: \"no fluff\", no filler",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/"
+    },
+    {
+      "rule_id": "content-007",
+      "name": "Repeated word",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "\\b(?!(?:that|had)\\b)(\\w+)\\s+\\1\\b",
+      "message": "This word is repeated.",
+      "source": "UIC Social media guidelines (posts must be grammatically correct)",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "\\1"
+    },
+    {
+      "rule_id": "content-008",
+      "name": "One space between sentences",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "(?<=\\S) {2,}(?=\\S)",
+      "message": "Use one space after a period and between words.",
+      "source": "UIC Editorial guide: Spacing",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": " "
+    },
+    {
+      "rule_id": "content-009",
+      "name": "Ampersand only in formal names",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "(?<=\\s)&(?=\\s)",
+      "message": "Use \"&\" only in formal names; otherwise spell out \"and\".",
+      "source": "UIC Editorial guide: Ampersand",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "and"
+    },
+    {
+      "rule_id": "content-010",
+      "name": "Phone number format (parentheses)",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\((\\d{3})\\)\\s*(\\d{3})[-.\\s](\\d{4})\\b",
+      "message": "Include the area code, use hyphens, no parentheses.",
+      "source": "UIC Editorial guide: Phone numbers",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1-\\2-\\3"
+    },
+    {
+      "rule_id": "content-011",
+      "name": "Social post too long",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "max_characters",
+      "message": "Social posts should be brief and fit the platform.",
+      "source": "UIC Social media guidelines (\"typically brief\"); 500-character limit is team-defined",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "Shorten the post",
+      "channels": [
+        "social_media"
+      ],
+      "params": {
+        "max_chars": 500
+      }
+    },
+    {
+      "rule_id": "content-012",
+      "name": "Email too long",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "max_words",
+      "message": "Lead with the key point and link to details.",
+      "source": "UIC Voice and tone (\"short, sharp and direct\"); 200-word limit is team-defined",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "suggestion": "Shorten the email or link to details",
+      "channels": [
+        "email"
+      ],
+      "params": {
+        "max_words": 200
+      }
+    },
+    {
+      "rule_id": "content-013",
+      "name": "Phone number format (periods)",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(\\d{3})\\.(\\d{3})\\.(\\d{4})\\b",
+      "message": "Use hyphens in phone numbers.",
+      "source": "UIC Editorial guide: Phone numbers",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1-\\2-\\3"
+    },
+    {
+      "rule_id": "content-014",
+      "name": "Month abbreviations",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "month_format",
+      "message": "Abbreviate Jan., Feb., Aug., Sept., Oct., Nov., Dec. only with a specific date; always spell out March-July.",
+      "source": "UIC Editorial guide: Dates",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-015",
+      "name": "UIC preferred spellings",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "on-line": "online",
+        "web page": "webpage",
+        "web pages": "webpages",
+        "home page": "homepage",
+        "web cam": "webcam",
+        "voice mail": "voicemail",
+        "fund raising": "fundraising",
+        "fund-raising": "fundraising",
+        "fund raiser": "fundraiser",
+        "fund-raiser": "fundraiser",
+        "health care": "healthcare",
+        "health-care": "healthcare",
+        "child care": "childcare",
+        "child-care": "childcare",
+        "text book": "textbook",
+        "campus-wide": "campuswide",
+        "campus wide": "campuswide",
+        "university-wide": "universitywide",
+        "university wide": "universitywide",
+        "listserve": "listserv",
+        "list serv": "listserv",
+        "fact-sheet": "fact sheet",
+        "factsheet": "fact sheet",
+        "student athlete": "student-athlete",
+        "alma-mater": "alma mater",
+        "vice-chancellor": "vice chancellor",
+        "vice-provost": "vice provost",
+        "vice-president": "vice president",
+        "theater": "theatre"
+      },
+      "message": "Use UIC's preferred spelling.",
+      "source": "UIC Editorial guide: Online; Web; Homepage; Voicemail; Fundraise; Healthcare; Childcare; Textbook; Campuswide; Listserv; Fact sheet; Student-athlete; Alma mater; Vice; Theatre",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-016",
+      "name": "Preferred UIC terms",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": {
+        "freshman": "first-year student",
+        "freshmen": "first-year students",
+        "dorm": "residence hall",
+        "dorms": "residence halls",
+        "dormitory": "residence hall",
+        "dormitories": "residence halls"
+      },
+      "message": "Use \"first-year student\" and \"residence hall\".",
+      "source": "UIC Editorial guide: Class levels; Residence hall; Inclusive Language Guide",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-017",
+      "name": "Degree style",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "Ph.D.": "PhD",
+        "Ph.D": "PhD",
+        "M.D.": "MD",
+        "B.S.": "BS",
+        "B.A.": "BA",
+        "M.A.": "MA",
+        "M.S.": "MS",
+        "M.B.A.": "MBA",
+        "M.P.H.": "MPH",
+        "D.D.S.": "DDS",
+        "Ed.D.": "EdD",
+        "Pharm.D.": "PharmD",
+        "Psy.D.": "PsyD",
+        "G.P.A.": "GPA",
+        "Bachelor's degree": "bachelor's degree",
+        "Master's degree": "master's degree",
+        "Bachelors degree": "bachelor's degree",
+        "bachelors degree": "bachelor's degree",
+        "Masters degree": "master's degree",
+        "masters degree": "master's degree",
+        "Associate's degree": "associate degree",
+        "associate's degree": "associate degree"
+      },
+      "message": "Degree abbreviations take no periods; generic degree names are lowercase with an apostrophe (\"bachelor's degree\").",
+      "source": "UIC Editorial guide: Degrees; GPA; PhD",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "content-018",
+      "name": "Use the % sign",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(\\d+(?:\\.\\d+)?)\\s?(?:percent|per cent)\\b",
+      "message": "Use the % symbol with numerals (\"5%\").",
+      "source": "UIC Editorial guide: Percentage",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1%"
+    },
+    {
+      "rule_id": "content-019",
+      "name": "Spell out street suffixes",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "street_suffix",
+      "message": "Spell out Street, Avenue, Road, etc. St., Ave. and Blvd. are acceptable only in numbered addresses.",
+      "source": "UIC Editorial guide: Streets",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-020",
+      "name": "Don't add the state after Chicago",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\bChicago,\\s*(?:Illinois|IL|Ill\\.)(?![\\w.])",
+      "message": "Don't add \"Illinois\" after \"Chicago\".",
+      "source": "UIC Editorial guide: City of Chicago",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "Chicago"
+    },
+    {
+      "rule_id": "content-021",
+      "name": "Never use multiple exclamation points",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "!{2,}",
+      "message": "Exclamation points are used rarely, and never two or more in a row.",
+      "source": "UIC Editorial guide: Exclamation point",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "!"
+    },
+    {
+      "rule_id": "content-022",
+      "name": "No serial (Oxford) comma",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "serial_comma",
+      "message": "No comma before the final \"and\"/\"or\" in a simple series (\"red, white and blue\"). Keep it only if an item contains its own conjunction.",
+      "source": "UIC Editorial guide: Commas in a series",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "(remove this comma)"
+    },
+    {
+      "rule_id": "content-023",
+      "name": "Spell out one through nine",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "small_numerals",
+      "message": "Spell out numbers one through nine; use figures for 10 and above (dates, times, ages, addresses and percentages use numerals).",
+      "source": "UIC Editorial guide: Numbers",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "content-024",
+      "name": "Avoid em dashes in electronic copy",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": " ?(?:—|--) ?",
+      "message": "Em dashes may turn into hyphens in electronic documents. Use a comma, colon or parentheses instead; if you keep the dash, put a space on both sides.",
+      "source": "UIC Editorial guide: Dash; Punctuation (avoid em dashes in documents transmitted electronically)",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "Use a comma, colon or parentheses (or \" — \")"
+    },
+    {
+      "rule_id": "content-025",
+      "name": "Use \"No.\" for rankings",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "(?<![\\w&])#(\\d{1,3})\\b",
+      "message": "Use \"No.\" before rank numerals (\"No. 1\").",
+      "source": "UIC Editorial guide: Rank",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "No. \\1"
+    },
+    {
+      "rule_id": "content-026",
+      "name": "Lowercase mid-sentence terms",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "lowercase_midsentence",
+      "message": "Lowercase this word unless it starts a sentence or is part of a formal name.",
+      "source": "UIC Editorial guide: Semester; Email; Internet; Homepage; Online; Dean's list; Capitalization",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "params": {
+        "terms": [
+          "Fall",
+          "Spring",
+          "Summer",
+          "Winter",
+          "Semester",
+          "Internet",
+          "Homepage",
+          "Online",
+          "Email",
+          "Website",
+          "Dean's List"
+        ]
+      }
+    },
+    {
+      "rule_id": "content-027",
+      "name": "Periods go inside quotation marks",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "(?<=[A-Za-z])([\\\"”])([.,])",
+      "message": "Periods and commas always go inside the closing quotation mark.",
+      "source": "UIC Editorial guide: Quotation marks",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\2\\1"
+    },
+    {
+      "rule_id": "content-028",
+      "name": "e.g. / i.e. need both periods",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(e\\.g|i\\.e)(?!\\.)",
+      "message": "Write \"e.g.\" and \"i.e.\" with a period after each letter.",
+      "source": "UIC Editorial guide: e.g., i.e.",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1."
+    },
+    {
+      "rule_id": "content-029",
+      "name": "Mail code format",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(?:M/C|M\\.C\\.|Mail Code|MC#|MC-|MC:)\\s*(\\d{2,4})\\b",
+      "message": "Write the mail code as \"MC\" plus a space and the number (\"MC 289\").",
+      "source": "UIC Editorial guide: Mail code",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "MC \\1"
+    },
+    {
+      "rule_id": "content-030",
+      "name": "No hyphen after -ly adverbs",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(?!(?:family|early|only|daily|friendly|likely|holy|ugly|silly|lonely|elderly|weekly|monthly|yearly|quarterly|nightly|hourly|costly|curly|jelly|belly|bully|rally|ally|July|Italy|reply|supply|apply|comply|multiply|imply|rely|fly|sly)-)([a-z]+ly)-([a-z]+)\\b",
+      "message": "Don't hyphenate -ly adverbs (\"an easily remembered rule\").",
+      "source": "UIC Editorial guide: Hyphen",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "\\1 \\2"
+    },
+    {
+      "rule_id": "content-031",
+      "name": "No \"the\" before Chicago Public Schools",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "the Chicago Public Schools": "Chicago Public Schools"
+      },
+      "message": "Don't use \"the\" before Chicago Public Schools.",
+      "source": "UIC Editorial guide: Chicago Public Schools",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    }
+  ]
+}

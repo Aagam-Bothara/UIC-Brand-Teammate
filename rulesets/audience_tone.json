@@ -1,0 +1,235 @@
+{
+  "ruleset_id": "audience_tone",
+  "ruleset_name": "Audience Tone Rules",
+  "description": "UIC voice and tone plus the Inclusive Language Guide (gender, race, immigration, socioeconomic framing).",
+  "enabled": true,
+  "highlight_color": "#EC4899",
+  "rules": [
+    {
+      "rule_id": "tone-001",
+      "name": "Overly casual language",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": [
+        "gonna",
+        "wanna",
+        "gotta",
+        "lol",
+        "omg",
+        "btw",
+        "thx",
+        "kinda",
+        "sorta",
+        "ya'll",
+        "y'all"
+      ],
+      "message": "Too informal for faculty and staff communications.",
+      "source": "UIC Social media guidelines (\"conversational yet professional\"); word list is team-defined",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "Use the full, standard wording",
+      "audiences": [
+        "faculty",
+        "staff"
+      ]
+    },
+    {
+      "rule_id": "tone-002",
+      "name": "Gendered language",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": {
+        "ladies and gentlemen": "everyone",
+        "men and women": "people / everyone",
+        "hey guys": "Hi everyone",
+        "hi guys": "Hi everyone",
+        "hello guys": "Hello everyone",
+        "you guys": "you all",
+        "chairman": "chairperson",
+        "chairwoman": "chairperson",
+        "he or she": "they",
+        "he/she": "they",
+        "s/he": "they",
+        "his or her": "their",
+        "him or her": "them",
+        "preferred pronouns": "pronouns",
+        "preferred pronoun": "pronouns",
+        "gay marriage": "same-sex marriage"
+      },
+      "message": "Use gender-neutral language.",
+      "source": "UIC Inclusive Language Guide: Gender and sexual identity",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "tone-003",
+      "name": "Academic or legal jargon",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "matriculate": "enroll",
+        "matriculation": "enrollment",
+        "pursuant to": "under",
+        "heretofore": "until now",
+        "aforementioned": "this",
+        "herein": "here",
+        "henceforth": "from now on",
+        "in accordance with": "following",
+        "notwithstanding": "despite"
+      },
+      "message": "Students respond better to plain, direct wording.",
+      "source": "Team-defined (SPEC)",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "audiences": [
+        "students"
+      ]
+    },
+    {
+      "rule_id": "tone-004",
+      "name": "Negative or threatening framing",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": [
+        "failure to",
+        "will result in",
+        "under no circumstances",
+        "strictly prohibited",
+        "will not be tolerated",
+        "no exceptions"
+      ],
+      "message": "Use asset-based framing: say what readers can do and why, not penalties.",
+      "source": "UIC Inclusive Language Guide: Asset-based framing; Voice and tone (Welcoming)",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/",
+      "suggestion": "Reframe positively (e.g. \"Submit by Friday to keep your spot\")"
+    },
+    {
+      "rule_id": "tone-005",
+      "name": "Bureaucratic passive phrasing",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "it is requested that": "please",
+        "it has been decided that": "we decided that",
+        "it should be noted that": "note that",
+        "it is recommended that": "we recommend that",
+        "please be advised that": "(remove this phrase)",
+        "please be informed that": "(remove this phrase)"
+      },
+      "message": "Speak with confidence; be direct.",
+      "source": "UIC Voice and tone (confident, direct, no filler)",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/"
+    },
+    {
+      "rule_id": "tone-006",
+      "name": "Exclamation points used rarely",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "excessive_exclamations",
+      "message": "Exclamation points are used rarely, if at all.",
+      "source": "UIC Editorial guide: Exclamation point",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "Replace with a period",
+      "channels": [
+        "email",
+        "website"
+      ],
+      "params": {
+        "max_count": 1
+      }
+    },
+    {
+      "rule_id": "tone-007",
+      "name": "Race and ethnicity terms",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": {
+        "minorities": "(name the specific groups) / historically overlooked",
+        "minority students": "historically overlooked students (or name the groups)",
+        "minority groups": "historically overlooked groups (or name the groups)",
+        "caucasian": "white",
+        "mixed-race": "multiracial / biracial",
+        "mixed race": "multiracial / biracial",
+        "BIPOC": "people of color (or be specific)",
+        "African-American": "African American",
+        "Asian-American": "Asian American",
+        "Mexican-American": "Mexican American",
+        "Chinese-American": "Chinese American",
+        "Korean-American": "Korean American"
+      },
+      "message": "Follow UIC's Inclusive Language Guide for race and ethnicity.",
+      "source": "UIC Inclusive Language Guide: Race and ethnicity",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "tone-008",
+      "name": "Immigration terms",
+      "severity": "high",
+      "pattern_type": "keyword",
+      "pattern": {
+        "illegal immigrant": "immigrant lacking permanent legal status",
+        "illegal immigrants": "immigrants lacking permanent legal status",
+        "illegal alien": "immigrant lacking permanent legal status",
+        "illegal aliens": "immigrants lacking permanent legal status",
+        "illegals": "immigrants lacking permanent legal status"
+      },
+      "message": "Use \"illegal\" only for actions, not people. Avoid \"alien\".",
+      "source": "UIC Inclusive Language Guide: Immigration",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "tone-009",
+      "name": "Socioeconomic and deficit framing",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "disadvantaged": "under-resourced / underserved",
+        "underprivileged": "people with low incomes",
+        "impoverished": "people with low incomes",
+        "the homeless": "people experiencing homelessness",
+        "homeless people": "people experiencing homelessness",
+        "achievement gap": "opportunity gap"
+      },
+      "message": "Describe people by their strengths and circumstances, not deficits.",
+      "source": "UIC Inclusive Language Guide: Socioeconomic status",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "tone-010",
+      "name": "Avoid \"empower\"",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": [
+        "empower",
+        "empowers",
+        "empowered",
+        "empowering",
+        "empowerment"
+      ],
+      "message": "Institutions can't give others power. Name the tools or resources that help people act.",
+      "source": "UIC Inclusive Language Guide: Empower",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/",
+      "suggestion": "Name the specific tools or resources"
+    },
+    {
+      "rule_id": "tone-011",
+      "name": "You-centered invitations",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "join us for": "You're invited to",
+        "join us at": "You're invited to"
+      },
+      "message": "Address the reader directly (\"You're invited to celebrate...\").",
+      "source": "UIC Inclusive Language Guide: You-centered language",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "tone-012",
+      "name": "Gender-neutral alumni terms",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "alumni_terms",
+      "message": "Use the gender-neutral \"alum\" (singular) and \"alums\" (plural). Formal names such as University of Illinois Alumni Association are unchanged.",
+      "source": "UIC Inclusive Language Guide: Gender (alum/alums); applied over the Editorial guide's alumnus/alumna by team decision",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    }
+  ]
+}

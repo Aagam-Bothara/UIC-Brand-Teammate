@@ -1,0 +1,57 @@
+{
+  "analysis": {
+    "audience": "students",
+    "channel": "email",
+    "rulesets_applied": [
+      "accessibility",
+      "audience_tone",
+      "brand",
+      "content",
+      "reading_level"
+    ],
+    "issues": [],
+    "issue_counts": {
+      "accessibility": 0,
+      "audience_tone": 0,
+      "brand": 0,
+      "content": 0,
+      "reading_level": 0
+    },
+    "severity_counts": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "reading_level": {
+      "grade_level": 6.1,
+      "reading_ease": 66.4,
+      "target_grade": 8.0,
+      "meets_target": true,
+      "word_count": 25,
+      "sentence_count": 3,
+      "syllable_count": 39,
+      "avg_words_per_sentence": 8.3,
+      "avg_syllables_per_word": 1.56
+    },
+    "text_stats": {
+      "word_count": 25,
+      "character_count": 147,
+      "sentence_count": 3,
+      "paragraph_count": 1
+    }
+  },
+  "scores": {
+    "brand_score": 100,
+    "accessibility_score": 100,
+    "ruleset_scores": {
+      "accessibility": 100,
+      "audience_tone": 100,
+      "brand": 100,
+      "content": 100,
+      "reading_level": 100
+    },
+    "total_issues": 0,
+    "status": "Approved",
+    "status_reason": "Both scores are 90+ with 0 issue(s)."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "ruleset_id": "reading_level",
+  "ruleset_name": "Reading Level Rules",
+  "description": "Audience-dependent readability: Students grade 8, Faculty/Staff grade 10 (Flesch-Kincaid).",
+  "enabled": true,
+  "highlight_color": "#8B5CF6",
+  "rules": [
+    {
+      "rule_id": "reading-001",
+      "name": "Reading level above audience target",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "reading_grade_level",
+      "message": "The overall reading level is higher than recommended for this audience.",
+      "source": "Team-defined (SPEC): Students grade 8, Faculty/Staff grade 10",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "suggestion": "Use shorter sentences and simpler words",
+      "params": {
+        "min_words": 30,
+        "high_severity_margin": 3
+      }
+    },
+    {
+      "rule_id": "reading-002",
+      "name": "Hard-to-read sentence",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "complex_sentences",
+      "message": "This sentence is much harder to read than the audience target.",
+      "source": "Team-defined (SPEC)",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "suggestion": "Use simpler words or split the sentence",
+      "params": {
+        "margin": 4,
+        "min_words": 12,
+        "skip_if_longer_than": {
+          "students": 20,
+          "faculty": 25,
+          "staff": 25
+        }
+      }
+    },
+    {
+      "rule_id": "reading-003",
+      "name": "Long sentence",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "long_sentences",
+      "message": "Long sentences are harder to follow. UIC voice favors short, punchy sentences.",
+      "source": "UIC Voice and tone (short, punchy sentences); limits (students 20, faculty/staff 25 words) are team-defined",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "suggestion": "Split into two or more sentences",
+      "params": {
+        "max_words": {
+          "students": 20,
+          "faculty": 25,
+          "staff": 25
+        }
+      }
+    },
+    {
+      "rule_id": "reading-004",
+      "name": "Long paragraph",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "long_paragraphs",
+      "message": "Long paragraphs are hard to scan.",
+      "source": "Team-defined (SPEC)",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "suggestion": "Break into shorter paragraphs or a bulleted list",
+      "params": {
+        "max_words": 100,
+        "max_sentences": 5
+      }
+    },
+    {
+      "rule_id": "reading-005",
+      "name": "Complex word with a plain alternative",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "utilize": "use",
+        "utilizes": "uses",
+        "utilization": "use",
+        "commence": "start",
+        "facilitate": "help",
+        "subsequently": "later",
+        "endeavor": "try",
+        "sufficient": "enough",
+        "numerous": "many",
+        "approximately": "about",
+        "demonstrate": "show",
+        "obtain": "get",
+        "terminate": "end",
+        "inquire": "ask",
+        "regarding": "about",
+        "additionally": "also",
+        "expedite": "speed up"
+      },
+      "message": "A simpler word is easier to read.",
+      "source": "UIC Voice and tone (\"no fluff\"); word list is team-defined",
+      "guideline_url": "https://brand.uic.edu/messaging/voice-and-tone/"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "ruleset_id": "brand",
+  "ruleset_name": "Brand Compliance Rules",
+  "description": "University naming and UIC-specific terminology from brand.uic.edu.",
+  "enabled": true,
+  "highlight_color": "#3B82F6",
+  "rules": [
+    {
+      "rule_id": "brand-001",
+      "name": "Official name has no \"at\"",
+      "severity": "high",
+      "pattern_type": "regex",
+      "pattern": "\\bUniversity of Illinois at Chicago\\b(?! Circle)",
+      "message": "Don't put \"at\" between Illinois and Chicago. The official name is University of Illinois Chicago.",
+      "source": "UIC Name and boilerplate",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-002",
+      "name": "No hyphen or punctuation in the name",
+      "severity": "high",
+      "pattern_type": "regex",
+      "pattern": "\\bUniversity of Illinois\\s*[-–—,]\\s*Chicago\\b",
+      "message": "Don't put a hyphen (or other punctuation) between Illinois and Chicago.",
+      "source": "UIC Name and boilerplate",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-003",
+      "name": "No periods in UIC",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "\\bU\\.\\s?I\\.\\s?C\\.?",
+      "message": "The acronym is \"UIC\" with no periods.",
+      "source": "Inferred from UIC Name and boilerplate (official acronym \"UIC\")",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "UIC",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-004",
+      "name": "Unofficial abbreviation of the name",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "\\b(?:U of I|UI) (?:at )?Chicago\\b",
+      "message": "The only approved short form is \"UIC\".",
+      "source": "Inferred from UIC Name and boilerplate (official acronym \"UIC\")",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "UIC"
+    },
+    {
+      "rule_id": "brand-005",
+      "name": "Abbreviated university name",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "\\bUniv\\.?\\s+of\\s+Ill(?:inois|\\.)?(?:\\s+(?:at\\s+)?Chicago)?",
+      "message": "Use the full name, University of Illinois Chicago, or \"UIC\".",
+      "source": "Inferred from UIC Name and boilerplate (use the full name wherever possible)",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-006",
+      "name": "Full name on first reference",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "first_reference_full_name",
+      "message": "Spell out University of Illinois Chicago on first reference; \"UIC\" is fine afterward.",
+      "source": "UIC Name and boilerplate (use the full name wherever possible; applied to all audiences and channels by team decision)",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-007",
+      "name": "UIC is always uppercase",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "(?<![@/.#\\w])(?:uic|Uic)(?!\\w|\\.\\w)",
+      "message": "Write \"UIC\" in capital letters (web and email addresses are fine).",
+      "source": "Inferred from UIC Name and boilerplate (official acronym \"UIC\")",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "UIC",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-008",
+      "name": "Redundant \"UIC University\"",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "\\bUIC University\\b",
+      "message": "\"UIC\" already includes \"University\".",
+      "source": "Inferred from UIC Name and boilerplate",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "UIC"
+    },
+    {
+      "rule_id": "brand-009",
+      "name": "Incomplete name \"Illinois Chicago\"",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "(?<!University of )\\bIllinois[- ]Chicago\\b",
+      "message": "Use the full name, University of Illinois Chicago, or \"UIC\".",
+      "source": "Inferred from UIC Name and boilerplate",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "UIC"
+    },
+    {
+      "rule_id": "brand-010",
+      "name": "Former campus name (Chicago Circle)",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\b(?:University of Illinois at )?Chicago Circle(?! Center)(?: Campus)?\\b|\\bUICC\\b",
+      "message": "Chicago Circle / UICC are former names. Use University of Illinois Chicago or UIC unless you are writing about history.",
+      "source": "UIC Editorial guide: UIC Student Center East (former names)",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "UIC"
+    },
+    {
+      "rule_id": "brand-011",
+      "name": "\"University of Illinois\" alone is ambiguous",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\bUniversity of Illinois\\b(?!\\s*(?:at\\s+)?[-–—,]?\\s*Chicago|\\s+(?:System|Urbana|Springfield|Hospital|Health|Foundation|Extension|Press|Board|Alumni|College|Cancer))",
+      "message": "Use \"University of Illinois\" sparingly; the public usually takes it to mean Urbana-Champaign. Name the campus.",
+      "source": "UIC Editorial guide: University of Illinois System",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-012",
+      "name": "\"U of I\" alone is ambiguous",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\bU of I\\b(?!\\s+(?:at\\s+)?Chicago|\\s+System)",
+      "message": "\"U of I\" is approved only in \"U of I System\". Use \"UIC\" for this university.",
+      "source": "UIC Editorial guide: University of Illinois System",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "UIC"
+    },
+    {
+      "rule_id": "brand-013",
+      "name": "Lowercase \"university\" when it stands alone",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "(?<=\\bthe )University\\b(?!\\s+of\\b)",
+      "message": "Capitalize \"university\" only in formal names; lowercase it when it stands alone.",
+      "source": "UIC Editorial guide: University, college",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "university",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-014",
+      "name": "No \"(UIC)\" after the full name",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "University of Illinois Chicago\\s*\\(\\s*UIC\\s*\\)",
+      "message": "Don't put \"UIC\" in parentheses after the full name. Just use \"UIC\" on later references.",
+      "source": "UIC Name and boilerplate; Editorial guide: University of Illinois Chicago",
+      "guideline_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "suggestion": "University of Illinois Chicago"
+    },
+    {
+      "rule_id": "brand-015",
+      "name": "The \"C rule\": space after UIC",
+      "severity": "medium",
+      "pattern_type": "regex",
+      "pattern": "(?<!#)\\bUIC[A-Za-z]{2,}\\b",
+      "message": "Always put a space between UIC and the next word, and don't let the C in UIC start the next word (not \"UICampus\").",
+      "source": "UIC Editorial guide: C rule",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "UIC + space + full word (e.g. \"UIC campus\")",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-016",
+      "name": "UI Health naming",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": {
+        "University of Illinois Medical Center": "UI Health",
+        "UIC Hospital": "UI Health",
+        "UIH": "UI Health",
+        "UIHHSS": "UI Health",
+        "UIMC": "UI Health",
+        "UI Cancer Center": "University of Illinois Cancer Center",
+        "UI Health faculty": "UIC faculty",
+        "UI Health College of": "University of Illinois Chicago College of"
+      },
+      "message": "Use current UI Health names. Don't use outdated names or acronyms; health science colleges, faculty and the cancer center are not branded \"UI Health\".",
+      "source": "UIC Editorial guide: UI Health; University of Illinois Cancer Center",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-017",
+      "name": "Former names of UIC units and buildings",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": {
+        "Chicago Circle Center": "UIC Student Center East",
+        "Chicago Illini Union": "UIC Student Center West",
+        "John Marshall Law School": "University of Illinois Chicago School of Law",
+        "University Administration": "System Offices"
+      },
+      "message": "This is a former name. Use the current name.",
+      "source": "UIC Editorial guide: Student Center East/West; School of Law; System Offices",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    },
+    {
+      "rule_id": "brand-018",
+      "name": "UIC proper names and spellings",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "GCC": "Great Cities Commitment",
+        "Jane Adams": "Jane Addams",
+        "Hull House": "Hull-House",
+        "UIC Today": "UIC today",
+        "UIC's Department": "the UIC Department",
+        "UI-Health": "UI Health"
+      },
+      "message": "Use the official spelling of this UIC name.",
+      "source": "UIC Editorial guide: Great Cities Commitment; Jane Addams Hull-House Museum; UIC today; Department names",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "case_sensitive": true
+    },
+    {
+      "rule_id": "brand-019",
+      "name": "Campus regions",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": {
+        "east campus": "the east side of campus",
+        "west campus": "the west side of campus"
+      },
+      "message": "Avoid \"east campus\" and \"west campus\"; they imply separate campuses.",
+      "source": "UIC Editorial guide: Campus regions",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/"
+    }
+  ]
+}

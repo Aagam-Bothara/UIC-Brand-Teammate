@@ -1,0 +1,44 @@
+{
+  "rulesets": [
+    {
+      "ruleset_id": "accessibility",
+      "ruleset_name": "Accessibility Rules",
+      "description": "Disability-inclusive language and WCAG 2.1 AA content checks (UIC requires WCAG 2.1 AA).",
+      "enabled": true,
+      "highlight_color": "#10B981",
+      "rule_count": 10
+    },
+    {
+      "ruleset_id": "audience_tone",
+      "ruleset_name": "Audience Tone Rules",
+      "description": "UIC voice and tone plus the Inclusive Language Guide (gender, race, immigration, socioeconomic framing).",
+      "enabled": true,
+      "highlight_color": "#EC4899",
+      "rule_count": 12
+    },
+    {
+      "ruleset_id": "brand",
+      "ruleset_name": "Brand Compliance Rules",
+      "description": "University naming and UIC-specific terminology from brand.uic.edu.",
+      "enabled": true,
+      "highlight_color": "#3B82F6",
+      "rule_count": 19
+    },
+    {
+      "ruleset_id": "content",
+      "ruleset_name": "Content & Style Rules",
+      "description": "UIC Editorial and Style Guide (AP-based, with UIC departures) and channel checks.",
+      "enabled": true,
+      "highlight_color": "#F59E0B",
+      "rule_count": 31
+    },
+    {
+      "ruleset_id": "reading_level",
+      "ruleset_name": "Reading Level Rules",
+      "description": "Audience-dependent readability: Students grade 8, Faculty/Staff grade 10 (Flesch-Kincaid).",
+      "enabled": true,
+      "highlight_color": "#8B5CF6",
+      "rule_count": 5
+    }
+  ]
+}

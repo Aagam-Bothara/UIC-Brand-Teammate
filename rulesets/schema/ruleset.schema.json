@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Aagam-Bothara/UIC-Brand-Teammate/rulesets/schema/ruleset.schema.json",
+  "title": "UIC Editorial Assistant Ruleset",
+  "type": "object",
+  "required": ["ruleset_id", "ruleset_name", "highlight_color", "rules"],
+  "additionalProperties": false,
+  "properties": {
+    "ruleset_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "ruleset_name": {"type": "string"},
+    "description": {"type": "string"},
+    "enabled": {"type": "boolean", "default": true, "description": "Selected by default in the UI"},
+    "highlight_color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+    "rules": {"type": "array", "items": {"$ref": "#/$defs/rule"}}
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["rule_id", "name", "severity", "pattern_type", "pattern"],
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^[a-z_]+-\\d{3}$"},
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "severity": {"enum": ["high", "medium", "low"]},
+        "pattern_type": {"enum": ["regex", "keyword", "function"]},
+        "pattern": {
+          "description": "regex: pattern string. keyword: string, list of strings, or {keyword: suggestion}. function: registered function name.",
+          "oneOf": [
+            {"type": "string", "minLength": 1},
+            {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+            {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 1}
+          ]
+        },
+        "case_sensitive": {"type": "boolean", "default": false},
+        "message": {"type": "string"},
+        "suggestion": {"type": "string", "description": "Replacement text. Regex rules may use backreferences such as \\1."},
+        "guideline_url": {"type": "string", "format": "uri"},
+        "source": {"type": "string", "description": "Where the rule comes from (UIC guide section, WCAG, or team-defined)"},
+        "enabled": {"type": "boolean", "default": true},
+        "audiences": {
+          "type": "array",
+          "items": {"enum": ["students", "faculty", "staff"]},
+          "description": "Empty or missing = all audiences"
+        },
+        "channels": {
+          "type": "array",
+          "items": {"enum": ["email", "website", "social_media"]},
+          "description": "Empty or missing = all channels"
+        },
+        "params": {"type": "object", "description": "Settings passed to function rules"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"pattern_type": {"enum": ["regex", "function"]}}},
+          "then": {"properties": {"pattern": {"type": "string"}}}
+        }
+      ]
+    }
+  }
+}

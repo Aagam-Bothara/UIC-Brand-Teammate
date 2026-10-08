@@ -1,0 +1,24 @@
+{
+  "audiences": [
+    {
+      "audience_id": "students",
+      "label": "Students",
+      "target_grade_level": 8.0
+    },
+    {
+      "audience_id": "faculty",
+      "label": "Faculty",
+      "target_grade_level": 10.0
+    },
+    {
+      "audience_id": "staff",
+      "label": "Staff",
+      "target_grade_level": 10.0
+    }
+  ],
+  "channels": [
+    "email",
+    "website",
+    "social_media"
+  ]
+}

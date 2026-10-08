@@ -1,0 +1,201 @@
+{
+  "ruleset_id": "accessibility",
+  "ruleset_name": "Accessibility Rules",
+  "description": "Disability-inclusive language and WCAG 2.1 AA content checks (UIC requires WCAG 2.1 AA).",
+  "enabled": true,
+  "highlight_color": "#10B981",
+  "rules": [
+    {
+      "rule_id": "access-001",
+      "name": "Non-descriptive link text",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": [
+        "click here",
+        "click this link",
+        "this link",
+        "read more",
+        "learn more",
+        "more info",
+        "link here"
+      ],
+      "message": "Use link text that describes where the link goes, e.g. \"View the fall course schedule\".",
+      "source": "WCAG 2.1 AA (required by UIC ADA compliance page)",
+      "guideline_url": "https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html",
+      "suggestion": "Describe where the link goes"
+    },
+    {
+      "rule_id": "access-002",
+      "name": "ALL CAPS text",
+      "severity": "medium",
+      "pattern_type": "function",
+      "pattern": "all_caps_text",
+      "message": "Avoid phrases in all capital letters; some screen readers spell them out. Use sentence case.",
+      "source": "WCAG 2.1 AA (required by UIC ADA compliance page); UIC Editorial guide: Capitalization (avoid unnecessary capitals)",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "suggestion": "Use sentence case"
+    },
+    {
+      "rule_id": "access-003",
+      "name": "Disability language",
+      "severity": "high",
+      "pattern_type": "keyword",
+      "pattern": {
+        "suffers from": "has",
+        "suffer from": "have",
+        "suffering from": "living with",
+        "a victim of": "(state the facts neutrally)",
+        "handi-capable": "disabled",
+        "differently abled": "disabled",
+        "differently-abled": "disabled",
+        "physically challenged": "disabled",
+        "handicapped": "disabled",
+        "handicap": "disability",
+        "high functioning": "(name the specific condition)",
+        "high-functioning": "(name the specific condition)",
+        "low functioning": "(name the specific condition)",
+        "low-functioning": "(name the specific condition)",
+        "hearing-impaired": "hard of hearing",
+        "hearing impaired": "hard of hearing",
+        "hearing impairment": "hard of hearing",
+        "partially deaf": "hard of hearing",
+        "able-bodied": "nondisabled / person without a disability",
+        "normal people": "people without disabilities",
+        "a quadriplegic": "a person who has quadriplegia",
+        "a paraplegic": "a person who has paraplegia",
+        "paraplegics": "people who have paraplegia",
+        "quadriplegics": "people who have quadriplegia",
+        "confined to a wheelchair": "uses a wheelchair",
+        "wheelchair bound": "wheelchair user",
+        "wheelchair-bound": "wheelchair user",
+        "special needs": "(be specific about the needs or services)",
+        "turn a blind eye": "ignore",
+        "turned a blind eye": "ignored",
+        "falls on deaf ears": "is ignored",
+        "fall on deaf ears": "be ignored",
+        "fell on deaf ears": "was ignored"
+      },
+      "message": "Use the language in UIC's Inclusive Language Guide: state facts neutrally, focus on what people can do, and avoid disability idioms.",
+      "source": "UIC Inclusive Language Guide: Disability",
+      "guideline_url": "https://brand.uic.edu/messaging/inclusive-language-guide/"
+    },
+    {
+      "rule_id": "access-004",
+      "name": "Image without alt text",
+      "severity": "high",
+      "pattern_type": "regex",
+      "pattern": "!\\[\\s*\\]\\([^)]*\\)|<img\\b(?![^>]*\\balt\\s*=)[^>]*>",
+      "message": "Every image needs alt text that describes it for blind users.",
+      "source": "UIC Social media guidelines (alt text on every photo); WCAG 2.1 AA (required by UIC ADA compliance page)",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "Add descriptive alt text"
+    },
+    {
+      "rule_id": "access-005",
+      "name": "Raw URL as link text",
+      "severity": "low",
+      "pattern_type": "regex",
+      "pattern": "\\bhttps?://[^\\s<>\\\"')]+",
+      "message": "Screen readers read raw URLs character by character. Link descriptive text instead.",
+      "source": "WCAG 2.1 AA (required by UIC ADA compliance page)",
+      "guideline_url": "https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html",
+      "suggestion": "Use descriptive link text",
+      "channels": [
+        "email",
+        "website"
+      ]
+    },
+    {
+      "rule_id": "access-006",
+      "name": "Sensory or directional instructions",
+      "severity": "low",
+      "pattern_type": "keyword",
+      "pattern": [
+        "see below",
+        "see above",
+        "shown below",
+        "shown above",
+        "the image above",
+        "the image below",
+        "in red",
+        "in green",
+        "the red button",
+        "the green button",
+        "on the right",
+        "on the left"
+      ],
+      "message": "Don't rely on position or color alone; name the section or item directly.",
+      "source": "WCAG 2.1 AA (required by UIC ADA compliance page)",
+      "guideline_url": "https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics.html",
+      "suggestion": "Refer to the item by name"
+    },
+    {
+      "rule_id": "access-007",
+      "name": "Unfamiliar acronym",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "unexpanded_acronyms",
+      "message": "Avoid acronyms except broadly understood ones like UIC.",
+      "source": "UIC Editorial guide: Abbreviations; Acronyms",
+      "guideline_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "params": {
+        "allowlist": [
+          "UIC",
+          "STEM",
+          "FAFSA",
+          "CPS"
+        ]
+      }
+    },
+    {
+      "rule_id": "access-008",
+      "name": "Too many emojis",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "emoji_overuse",
+      "message": "Limit emojis; screen readers announce each one by name.",
+      "source": "Team-defined (accessibility best practice; not on the UIC site)",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "Remove extra emojis",
+      "params": {
+        "max_emojis": 3
+      }
+    },
+    {
+      "rule_id": "access-009",
+      "name": "Hashtag not in CamelCase",
+      "severity": "low",
+      "pattern_type": "function",
+      "pattern": "non_camelcase_hashtags",
+      "message": "Capitalize each word in multi-word hashtags (e.g. #UICFlamesForward) so screen readers pronounce them correctly.",
+      "source": "Team-defined (accessibility best practice; not on the UIC site)",
+      "guideline_url": "https://brand.uic.edu/resources/social-media-guidelines/",
+      "suggestion": "Capitalize each word in the hashtag",
+      "channels": [
+        "social_media"
+      ],
+      "params": {
+        "min_length": 10
+      }
+    },
+    {
+      "rule_id": "access-010",
+      "name": "Details only in an image or attachment",
+      "severity": "medium",
+      "pattern_type": "keyword",
+      "pattern": [
+        "see attached flyer",
+        "see the attached flyer",
+        "see flyer",
+        "see image for details",
+        "see the image for details",
+        "details in the image",
+        "details in the flyer"
+      ],
+      "message": "Put key details (date, time, location) in the text; images and flyers may not be accessible.",
+      "source": "WCAG 2.1 AA (required by UIC ADA compliance page)",
+      "guideline_url": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html",
+      "suggestion": "Include the details in the message text"
+    }
+  ]
+}
