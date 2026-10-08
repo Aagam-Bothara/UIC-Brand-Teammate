@@ -1,0 +1,92 @@
+# Content Analysis Task
+
+You are analyzing a UIC communication to identify potential issues related to brand compliance, accessibility, and quality.
+
+## Context
+
+**Target Audience**: {audience}
+**Communication Channel**: {channel}
+**Reading Level Target**: {reading_level_target}
+
+## Text to Analyze
+
+{text_to_analyze}
+
+## Retrieved Brand Guidelines
+
+Use these UIC brand guidelines as your reference:
+
+{guidelines_context}
+
+## Analysis Instructions
+
+Review the text and identify issues in the following categories:
+
+### 1. Brand Compliance Issues
+Look for:
+- Incorrect university name usage (should be "University of Illinois Chicago" on first reference)
+- Missing or incorrect boilerplate/tagline
+- Off-brand terminology or phrasing
+- Inconsistent voice or tone with UIC brand attributes
+- Incorrect logo or visual references
+
+### 2. Accessibility Issues
+Look for:
+- Reading level above the target: {reading_level_target}
+- Complex jargon without explanation
+- Long, dense paragraphs
+- Missing or poor heading structure
+- Lack of alt text references for images
+- Poor color contrast or formatting descriptions
+
+### 3. Content Quality Issues
+Look for:
+- Grammar or spelling errors
+- Passive voice overuse
+- Wordiness or redundancy
+- Unclear calls-to-action
+- Missing important information
+- Factual inconsistencies
+
+### 4. Reading Level Issues
+Look for:
+- Vocabulary above target reading level
+- Sentence complexity too high
+- Technical terms without definitions
+- Abstract concepts without concrete examples
+
+### 5. Audience Tone Issues
+Look for:
+- Tone mismatch with {audience} audience
+- Inappropriate formality level
+- Missing audience-relevant context
+- Focus on wrong priorities for this audience
+
+## Output Format
+
+For each issue found, provide:
+
+1. **Issue Type**: One of [BRAND, ACCESSIBILITY, CONTENT, READING_LEVEL, AUDIENCE_TONE]
+2. **Severity**: One of [high, medium, low]
+3. **Location**: Quote the specific text segment with the issue
+4. **Description**: Brief explanation of the problem
+5. **Suggestion**: Recommended fix or improvement
+
+Format your response as a JSON array:
+
+```json
+[
+  {
+    "issue_type": "BRAND",
+    "severity": "high",
+    "location": "quoted text with issue",
+    "description": "explanation of the problem",
+    "suggestion": "recommended fix",
+    "guideline_reference": "relevant guideline if applicable"
+  }
+]
+```
+
+Only include actual issues you've identified. If the text is compliant in all areas, return an empty array: `[]`
+
+Begin your analysis now:

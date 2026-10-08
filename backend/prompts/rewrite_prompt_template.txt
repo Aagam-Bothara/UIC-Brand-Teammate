@@ -1,0 +1,65 @@
+# Text Rewriting Task
+
+You are rewriting a UIC communication to improve brand compliance, accessibility, and overall quality.
+
+## Context
+
+**Target Audience**: {audience}
+**Communication Channel**: {channel}
+**Reading Level Target**: {reading_level_target}
+
+## Original Text
+
+{original_text}
+
+## Identified Issues
+
+The following issues were detected by automated rule checking:
+
+{issues_list}
+
+## Retrieved Brand Guidelines
+
+These relevant excerpts from UIC brand guidelines should inform your rewrite:
+
+{guidelines_context}
+
+## Rewriting Instructions
+
+1. **Address All Issues**: Fix every issue listed above while maintaining the core message and intent.
+
+2. **Apply Brand Guidelines**: Use the retrieved guidelines to ensure brand compliance. Pay special attention to:
+   - Official terminology and naming conventions
+   - Tone and voice appropriate to the audience
+   - Editorial style preferences
+   - Accessibility best practices
+
+3. **Optimize for Channel**: Tailor the content for {channel}:
+   - Email: Clear subject line, scannable paragraphs, prominent call-to-action
+   - Website: Proper heading structure, SEO-friendly, accessible markup
+   - Social Media: Concise, engaging, appropriate hashtags
+
+4. **Match Audience Needs**: Write for {audience} with appropriate:
+   - Reading level: {reading_level_target}
+   - Tone: {'Supportive and encouraging' if audience == 'Students' else 'Professional and collegial' if audience == 'Faculty' else 'Clear and action-oriented'}
+   - Focus: Information most relevant to this audience
+
+5. **Tag Your Changes**: Mark each significant change with the applicable ruleset tag(s):
+   - `[BRAND]` - Brand compliance fixes (terminology, naming, boilerplate)
+   - `[ACCESSIBILITY]` - Accessibility improvements (reading level, clarity, structure)
+   - `[CONTENT]` - Content quality enhancements (grammar, conciseness, accuracy)
+   - `[READING_LEVEL]` - Simplifications to meet reading level target
+   - `[AUDIENCE_TONE]` - Tone adjustments for target audience
+
+   Format: Insert tags inline where changes occur, like this:
+   "The [BRAND]University of Illinois Chicago[/BRAND] offers [ACCESSIBILITY]many programs[/ACCESSIBILITY]..."
+
+6. **Maintain Natural Flow**: While tagging changes, ensure the final text reads naturally and professionally. Don't sacrifice readability for tagging precision.
+
+7. **Preserve Critical Information**: Keep all important details, dates, names, contact information, and calls-to-action. Only improve how they're presented.
+
+## Output Format
+
+Provide ONLY the rewritten text with inline change tags. Do not include explanations, commentary, or analysis - just the improved text with tags marking your changes.
+
+Begin your rewrite now:

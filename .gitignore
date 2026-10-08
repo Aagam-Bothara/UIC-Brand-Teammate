@@ -1,24 +1,27 @@
-# OS
-.DS_Store
-Thumbs.db
-
-# Editors
-.vscode/
-.idea/
-
-# Environment / secrets
+# Local credentials and environment files
+.kiro/specs/bedrock-setup/AWS-Access-Info.txt
 .env
 .env.*
 !.env.example
 
-# Node
+# Python artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node artifacts
 node_modules/
 dist/
 build/
 npm-debug.log*
 
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Office temporary files
+~$*.xlsx
+
+# IDE and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
