@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "chunk_id": "name-boilerplate-002",
+      "text": "# Name and boilerplate — University name\n\nOn first reference, use the full name of the university: University of Illinois Chicago. Do not include \"at\" in the name; \"University of Illinois at Chicago\" is no longer correct. On second and later references, UIC is preferred. Do not use periods (U.I.C.) and do not precede UIC with \"the\" when it is used as a noun (\"UIC offers…\", not \"The UIC offers…\").",
+      "score": 0.91,
+      "source_id": "name-boilerplate",
+      "source_title": "Name and boilerplate",
+      "source_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "section": "University name"
+    },
+    {
+      "chunk_id": "name-boilerplate-003",
+      "text": "# Name and boilerplate — Second reference and abbreviations\n\nUse \"the university\" (lowercase) as a generic second reference. Do not shorten the name to \"Chicago,\" \"Illinois\" or \"U of I,\" and do not use \"UIC\" to mean the University of Illinois System. Refer to the system by its full name on first reference and \"the U of I System\" afterward.",
+      "score": 0.77,
+      "source_id": "name-boilerplate",
+      "source_title": "Name and boilerplate",
+      "source_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "section": "Second reference and abbreviations"
+    },
+    {
+      "chunk_id": "name-boilerplate-005",
+      "text": "# Name and boilerplate — Boilerplate\n\nUse the approved boilerplate at the end of news releases and in partner materials: \"The University of Illinois Chicago is Chicago's largest university and its only public research university.\" Do not edit the boilerplate text; use the short version where space is limited.",
+      "score": 0.58,
+      "source_id": "name-boilerplate",
+      "source_title": "Name and boilerplate",
+      "source_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "section": "Boilerplate"
+    }
+  ],
+  "backend": "local",
+  "latency_ms": 11
+}

@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "source_id": "name-boilerplate",
+      "title": "Name and boilerplate",
+      "url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "raw_path": "raw/name-boilerplate.md",
+      "chunk_count": 14,
+      "sha256": "e729563a7d6d629d598cde2d488cf9f34a8cae10e6075814bef93c0d792e1bb2"
+    },
+    {
+      "source_id": "voice-tone",
+      "title": "Voice and tone",
+      "url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "category": "tone",
+      "raw_path": "raw/voice-tone.md",
+      "chunk_count": 22,
+      "sha256": "646035d0fee22dc9165bcffe25fee3dfad51290197c3179fb6d6f23976ea210a"
+    },
+    {
+      "source_id": "brand-strategy",
+      "title": "Brand strategy",
+      "url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "category": "audience",
+      "raw_path": "raw/brand-strategy.md",
+      "chunk_count": 28,
+      "sha256": "fe612773be660b472c2feff572bc55c46e5911eb1b03cf0ed0bc981595964fae"
+    },
+    {
+      "source_id": "editorial-style",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "category": "editorial",
+      "raw_path": "raw/editorial-style.md",
+      "chunk_count": 56,
+      "sha256": "833cdf4b1eda332f6bb683c2fa7f879c59e2bfa95b3a2501a8217e84c94e2303"
+    }
+  ]
+}

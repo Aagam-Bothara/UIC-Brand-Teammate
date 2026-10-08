@@ -1,0 +1,5 @@
+# Editorial and style guide — UIC specific terminology
+
+**University of Illinois Hospital:** Used to refer specifically to the hospital that is part of UI Health, if necessary for clarity. Do not use University of Illinois Medical Center or UIC Hospital.
+
+**UI Health Mile Square Health Center:** Used for the network of community clinics that receives funding from the government as a federally qualified health center. Always include UI Health and write out Mile Square Health Center (singular) on the first reference. UI Health Mile Square or Mile Square is OK on second reference. If referring to one Mile Square clinic, be specific: UI Health Mile Square Health Center-Englewood on first reference and Mile Square-Englewood on second reference. Or more generically on second reference: Mile Square’s Englewood clinic or Mile Square clinics in Englewood, Back of the Yards and Cicero.

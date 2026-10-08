@@ -1,0 +1,884 @@
+[
+ {
+  "id": "demo-01",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "brand-006-1",
+    "rule_id": "brand-006",
+    "ruleset": "brand",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-025-1",
+    "rule_id": "content-025",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-1",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-021-1",
+    "rule_id": "content-021",
+    "ruleset": "content",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-006-1",
+    "rule_id": "tone-006",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-2",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-018-1",
+    "rule_id": "content-018",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-005-1",
+    "rule_id": "access-005",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-030-1",
+    "rule_id": "content-030",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 82,
+   "accessibility": 76,
+   "total_issues": 12,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-02",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "high"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-004-1",
+    "rule_id": "reading-004",
+    "ruleset": "reading_level",
+    "severity": "low"
+   },
+   {
+    "issue_id": "brand-001-1",
+    "rule_id": "brand-001",
+    "ruleset": "brand",
+    "severity": "high"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-022-1",
+    "rule_id": "content-022",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "reading-003-2",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-007-1",
+    "rule_id": "content-007",
+    "ruleset": "content",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-2",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-007-2",
+    "rule_id": "content-007",
+    "ruleset": "content",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 78,
+   "accessibility": 68,
+   "total_issues": 10,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-03",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-002-1",
+    "rule_id": "tone-002",
+    "ruleset": "audience_tone",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "brand-002-1",
+    "rule_id": "brand-002",
+    "ruleset": "brand",
+    "severity": "high"
+   },
+   {
+    "issue_id": "content-021-1",
+    "rule_id": "content-021",
+    "ruleset": "content",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-011-1",
+    "rule_id": "content-011",
+    "ruleset": "content",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-2",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 75,
+   "accessibility": 85,
+   "total_issues": 7,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-04",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "brand-006-1",
+    "rule_id": "brand-006",
+    "ruleset": "brand",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-005-1",
+    "rule_id": "content-005",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-003-1",
+    "rule_id": "content-003",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-001-1",
+    "rule_id": "content-001",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 89,
+   "accessibility": 85,
+   "total_issues": 7,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-05",
+  "issues": [
+   {
+    "issue_id": "brand-001-1",
+    "rule_id": "brand-001",
+    "ruleset": "brand",
+    "severity": "high"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-005-1",
+    "rule_id": "content-005",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-014-1",
+    "rule_id": "content-014",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 86,
+   "accessibility": 90,
+   "total_issues": 5,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-06",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "brand-006-1",
+    "rule_id": "brand-006",
+    "ruleset": "brand",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-003-1",
+    "rule_id": "tone-003",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "tone-003-2",
+    "rule_id": "tone-003",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-1",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-011-1",
+    "rule_id": "content-011",
+    "ruleset": "content",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 86,
+   "accessibility": 88,
+   "total_issues": 7,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-07",
+  "issues": [
+   {
+    "issue_id": "access-007-1",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-2",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-3",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 94,
+   "total_issues": 3,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-08",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-005-1",
+    "rule_id": "tone-005",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "reading-002-2",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-2",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 98,
+   "accessibility": 75,
+   "total_issues": 6,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-09",
+  "issues": [
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-2",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "access-007-1",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-2",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-007-3",
+    "rule_id": "access-007",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-022-1",
+    "rule_id": "content-022",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 98,
+   "accessibility": 84,
+   "total_issues": 6,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-10",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-004-1",
+    "rule_id": "reading-004",
+    "ruleset": "reading_level",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-022-1",
+    "rule_id": "content-022",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "reading-003-2",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-001-1",
+    "rule_id": "content-001",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-007-1",
+    "rule_id": "content-007",
+    "ruleset": "content",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 91,
+   "accessibility": 83,
+   "total_issues": 7,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-11",
+  "issues": [
+   {
+    "issue_id": "brand-001-1",
+    "rule_id": "brand-001",
+    "ruleset": "brand",
+    "severity": "high"
+   },
+   {
+    "issue_id": "access-001-1",
+    "rule_id": "access-001",
+    "ruleset": "accessibility",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "access-001-2",
+    "rule_id": "access-001",
+    "ruleset": "accessibility",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "access-005-1",
+    "rule_id": "access-005",
+    "ruleset": "accessibility",
+    "severity": "low"
+   },
+   {
+    "issue_id": "content-030-1",
+    "rule_id": "content-030",
+    "ruleset": "content",
+    "severity": "low"
+   },
+   {
+    "issue_id": "access-001-3",
+    "rule_id": "access-001",
+    "ruleset": "accessibility",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 88,
+   "accessibility": 83,
+   "total_issues": 6,
+   "status": "Major Revisions"
+  }
+ },
+ {
+  "id": "demo-12",
+  "issues": [
+   {
+    "issue_id": "reading-004-1",
+    "rule_id": "reading-004",
+    "ruleset": "reading_level",
+    "severity": "low"
+   },
+   {
+    "issue_id": "tone-001-1",
+    "rule_id": "tone-001",
+    "ruleset": "audience_tone",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-001-2",
+    "rule_id": "tone-001",
+    "ruleset": "audience_tone",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "tone-001-3",
+    "rule_id": "tone-001",
+    "ruleset": "audience_tone",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-005-1",
+    "rule_id": "content-005",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 83,
+   "accessibility": 98,
+   "total_issues": 5,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-13",
+  "issues": [
+   {
+    "issue_id": "tone-004-1",
+    "rule_id": "tone-004",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "tone-004-2",
+    "rule_id": "tone-004",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   },
+   {
+    "issue_id": "tone-004-3",
+    "rule_id": "tone-004",
+    "ruleset": "audience_tone",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 94,
+   "accessibility": 100,
+   "total_issues": 3,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-14",
+  "issues": [
+   {
+    "issue_id": "reading-001-1",
+    "rule_id": "reading-001",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-2",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 80,
+   "total_issues": 4,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-15",
+  "issues": [
+   {
+    "issue_id": "brand-006-1",
+    "rule_id": "brand-006",
+    "ruleset": "brand",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-018-1",
+    "rule_id": "content-018",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 93,
+   "accessibility": 95,
+   "total_issues": 3,
+   "status": "Minor Revisions"
+  }
+ },
+ {
+  "id": "demo-16",
+  "issues": [
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 95,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-17",
+  "issues": [
+   {
+    "issue_id": "access-002-1",
+    "rule_id": "access-002",
+    "ruleset": "accessibility",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 90,
+   "total_issues": 2,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-18",
+  "issues": [
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 90,
+   "total_issues": 2,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-19",
+  "issues": [
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   },
+   {
+    "issue_id": "content-022-1",
+    "rule_id": "content-022",
+    "ruleset": "content",
+    "severity": "low"
+   }
+  ],
+  "expected": {
+   "brand": 98,
+   "accessibility": 95,
+   "total_issues": 2,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-20",
+  "issues": [
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 95,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-21",
+  "issues": [
+   {
+    "issue_id": "reading-003-1",
+    "rule_id": "reading-003",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 95,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-22",
+  "issues": [
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 95,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-23",
+  "issues": [
+   {
+    "issue_id": "content-007-1",
+    "rule_id": "content-007",
+    "ruleset": "content",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 95,
+   "accessibility": 100,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ },
+ {
+  "id": "demo-24",
+  "issues": [
+   {
+    "issue_id": "reading-002-1",
+    "rule_id": "reading-002",
+    "ruleset": "reading_level",
+    "severity": "medium"
+   }
+  ],
+  "expected": {
+   "brand": 100,
+   "accessibility": 95,
+   "total_issues": 1,
+   "status": "Approved"
+  }
+ }
+]

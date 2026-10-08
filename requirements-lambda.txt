@@ -1,0 +1,5 @@
+# Runtime deps bundled into the RAG API Lambda package (scripts/aws/deploy_rag_api.py).
+# boto3 is provided by the Lambda Python runtime and is not bundled.
+fastapi>=0.115
+pydantic>=2.8
+mangum>=0.17

@@ -1,0 +1,51 @@
+/* App-shell motion (Task 4.12). Global reduced-motion handling lives in src/index.css. */
+
+@keyframes uic-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes uic-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes uic-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.uic-progress-indicator {
+  animation: uic-progress 1.15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.uic-fade-in {
+  animation: uic-fade-in 180ms ease-out both;
+}
+
+.uic-pop-in {
+  animation: uic-pop-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* A static, half-opacity bar instead of a strobing one. */
+  .uic-progress-indicator {
+    animation: none;
+    width: 100%;
+    opacity: 0.6;
+  }
+}

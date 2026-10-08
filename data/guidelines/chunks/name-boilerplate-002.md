@@ -1,0 +1,3 @@
+# Name and boilerplate — Boilerplate > Long
+
+Our mission at the University of Illinois Chicago is to provide the broadest access to the highest levels of educational, research and clinical excellence. Named an Opportunity University by the Carnegie Foundation, UIC is a nationally recognized engine of social mobility, ranked first in Illinois and No. 17 nationally among public universities in U.S. News & World Report Best Colleges.

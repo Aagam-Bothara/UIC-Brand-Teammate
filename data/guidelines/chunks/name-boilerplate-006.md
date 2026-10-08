@@ -1,0 +1,3 @@
+# Name and boilerplate — Diversity statement
+
+UIC is a Minority Serving Institution (MSI) and one of the most diverse college campuses in the U.S. It is one of only 26 institutions in the country that is designated as both a Carnegie 1 Institution (R1) and a Hispanic-Serving Institution (HSI). It is also designated as an Asian American and Native American Pacific Islander Serving Institution (AANAPISI). Nearly 60% of first-time, first-year students at UIC are Pell-eligible and 35% identify as first-generation college students.

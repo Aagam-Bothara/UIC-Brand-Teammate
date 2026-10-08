@@ -1,0 +1,3 @@
+# Name and boilerplate — Boilerplate > Shortened
+
+The mission of the University of Illinois Chicago is to provide the broadest access to the highest levels of educational, research and clinical excellence. Located in the heart of Chicago, UIC is the city’s largest, most culturally rich university and only public research institution. UIC serves more than 37,000 students – 56% are Pell-eligible, and more than half are first-generation – across 16 colleges. As the state’s leading educator of health professionals and home to UI Health, the university’s academic health enterprise, UIC delivers high-quality education with real-world reach. UIC students shape their own futures while creating lasting impact for others. UIC makes access and excellence known – every day.

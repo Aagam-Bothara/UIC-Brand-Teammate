@@ -1,0 +1,3 @@
+# Voice and tone — Introduction
+
+In the simplest terms, our message is what we say and our voice is how we say it. Still, it’s practically impossible to separate the two. They must always be true to one another. And it’s through our tone — informed by our brand personality traits and based on our creative platform — that the UIC voice takes shape, expressing who we are in a way that’s authentically, unapologetically ours.

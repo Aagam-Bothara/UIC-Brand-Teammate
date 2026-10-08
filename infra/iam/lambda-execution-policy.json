@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "WriteBackendLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": [
+        "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:${LOG_GROUP}",
+        "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:${LOG_GROUP}:*"
+      ]
+    },
+    {
+      "Sid": "WriteDefaultLambdaLogGroups",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${PROJECT}*",
+        "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${PROJECT}*:*"
+      ]
+    },
+    {
+      "Sid": "ReadAppConfigFromParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath"
+      ],
+      "Resource": [
+        "arn:aws:ssm:${REGION}:${ACCOUNT_ID}:parameter${PARAM_PREFIX}",
+        "arn:aws:ssm:${REGION}:${ACCOUNT_ID}:parameter${PARAM_PREFIX}/*"
+      ]
+    },
+    {
+      "Sid": "RetrieveFromGuidelinesKnowledgeBase",
+      "Effect": "Allow",
+      "Action": ["bedrock:Retrieve"],
+      "Resource": "${KNOWLEDGE_BASE_ARN}"
+    },
+    {
+      "Sid": "RetrieveAndGenerateNoResourceLevelSupport",
+      "Effect": "Allow",
+      "Action": ["bedrock:RetrieveAndGenerate"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "InvokeAnthropicAndAmazonModels",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.*",
+        "arn:aws:bedrock:*::foundation-model/amazon.*",
+        "arn:aws:bedrock:${REGION}:${ACCOUNT_ID}:inference-profile/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "results": [
+    {
+      "chunk_id": "name-boilerplate-002",
+      "text": "# Name and boilerplate — University name\n\nOn first reference, use the full name of the university: University of Illinois Chicago. Do not include \"at\" in the name; \"University of Illinois at Chicago\" is no longer correct. On second and later references, UIC is preferred. Do not use periods (U.I.C.) and do not precede UIC with \"the\" when it is used as a noun (\"UIC offers…\", not \"The UIC offers…\").",
+      "score": 0.89,
+      "source_id": "name-boilerplate",
+      "source_title": "Name and boilerplate",
+      "source_url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "section": "University name"
+    },
+    {
+      "chunk_id": "editorial-style-018",
+      "text": "# Editorial and style guide — Links\n\nLink text must describe the destination or action on its own. Avoid \"click here,\" \"read more\" and bare URLs; screen reader users often move through a page or email by its list of links. Write \"Register for the Spring Career Fair\" instead of \"Click here to register.\"",
+      "score": 0.83,
+      "source_id": "editorial-style",
+      "source_title": "Editorial and style guide",
+      "source_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "category": "editorial",
+      "section": "Links"
+    },
+    {
+      "chunk_id": "voice-tone-004",
+      "text": "# Voice and tone — Tone by audience\n\nWith students, our tone is encouraging, direct and warm without being overly casual. Address readers as \"you,\" lead with what they need to do and when, and keep sentences short. Avoid slang, stacked exclamation points and all caps for emphasis.",
+      "score": 0.79,
+      "source_id": "voice-tone",
+      "source_title": "Voice and tone",
+      "source_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "category": "tone",
+      "section": "Tone by audience"
+    },
+    {
+      "chunk_id": "brand-strategy-007",
+      "text": "# Brand strategy — Key audiences — Students\n\nCurrent students want practical information they can act on and to feel that UIC is invested in their success. Connect announcements to outcomes that matter to them, such as careers, community and support, and make next steps and deadlines easy to find.",
+      "score": 0.76,
+      "source_id": "brand-strategy",
+      "source_title": "Brand strategy",
+      "source_url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "category": "audience",
+      "section": "Key audiences — Students"
+    },
+    {
+      "chunk_id": "editorial-style-009",
+      "text": "# Editorial and style guide — Dates and times\n\nUse numerals without ordinals for dates (\"March 5,\" not \"March 5th\"). Abbreviate months with a specific date except March through July. Use \"a.m.\" and \"p.m.\" in lowercase with periods, and use \"noon\" and \"midnight\" rather than \"12 p.m.\" or \"12 a.m.\"",
+      "score": 0.7,
+      "source_id": "editorial-style",
+      "source_title": "Editorial and style guide",
+      "source_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "category": "editorial",
+      "section": "Dates and times"
+    },
+    {
+      "chunk_id": "voice-tone-002",
+      "text": "# Voice and tone — Brand attributes\n\nUIC's voice is bold, authentic and welcoming. We sound confident without boasting and inclusive without being vague. Use active voice and plain language so it is clear who is doing what; aim for writing an eighth- to tenth-grade reader can follow on first read.",
+      "score": 0.66,
+      "source_id": "voice-tone",
+      "source_title": "Voice and tone",
+      "source_url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "category": "tone",
+      "section": "Brand attributes"
+    },
+    {
+      "chunk_id": "editorial-style-022",
+      "text": "# Editorial and style guide — Images and alternative text\n\nEvery meaningful image needs alternative (alt) text that conveys its purpose in context, usually in 125 characters or fewer. Do not begin with \"image of.\" Never put essential information, such as event dates or registration details, only inside an image.",
+      "score": 0.61,
+      "source_id": "editorial-style",
+      "source_title": "Editorial and style guide",
+      "source_url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "category": "editorial",
+      "section": "Images and alternative text"
+    },
+    {
+      "chunk_id": "brand-strategy-003",
+      "text": "# Brand strategy — Key messages\n\nLead with UIC's core message: an urban public research university where talent from every background thrives. Supporting messages emphasize access and excellence, Chicago as a partner and classroom, and research that makes a difference in communities.",
+      "score": 0.57,
+      "source_id": "brand-strategy",
+      "source_title": "Brand strategy",
+      "source_url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "category": "audience",
+      "section": "Key messages"
+    }
+  ],
+  "backend": "local",
+  "latency_ms": 27
+}

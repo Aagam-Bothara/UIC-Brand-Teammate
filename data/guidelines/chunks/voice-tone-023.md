@@ -1,0 +1,4 @@
+# Voice and tone — Elevator speeches
+
+**In 30 seconds**
+At the University of Illinois Chicago, we don’t just believe access and excellence can thrive together. We know it — and we prove it every day. For our 37,000 students — half are first-generation, and 56 percent are Pell-eligible. For our city. For our state. UIC doesn’t just educate, it powers Illinois — with doctors, nurses, pharmacists, educators and innovators. We deliver transformative education, world-class clinical care and breakthrough research valued at almost half a billion dollars. Our impact fuels Chicago and beyond. Our big ambitions say no ceilings, no limits. Our scholarship doesn’t sit quietly on a shelf. It shakes the world. At UIC, our greatness is lived. It’s amplified. We make access and excellence known. Every single day.

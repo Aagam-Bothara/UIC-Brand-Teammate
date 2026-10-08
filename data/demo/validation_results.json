@@ -1,0 +1,2211 @@
+[
+  {
+    "demo_id": "demo-01",
+    "source_communication_id": "COMM-00228",
+    "communication_type": "Student Newsletter",
+    "audience": "Students",
+    "channel": "Website",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 54.8,
+      "accessibility_score": 49.3,
+      "total_issues": 8,
+      "fk_grade": 13.1
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 2,
+        "content": 4,
+        "reading_level": 4,
+        "audience_tone": 1
+      },
+      "total_issues": 12,
+      "rule_ids": [
+        "access-005",
+        "access-007",
+        "brand-006",
+        "content-018",
+        "content-021",
+        "content-025",
+        "content-030",
+        "reading-001",
+        "reading-002",
+        "reading-003",
+        "tone-006"
+      ],
+      "brand_score": 82,
+      "accessibility_score": 76,
+      "status": "Major Revisions",
+      "status_reason": "12 issues found (more than 5).",
+      "reading_grade": 10.0,
+      "reading_target": 8.0,
+      "word_count": 155
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Incorrect UIC logo version",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Brand voice inconsistency",
+        "ruleset": "brand",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "brand-006",
+          "content-021",
+          "content-025",
+          "tone-006"
+        ]
+      },
+      {
+        "dataset_issue": "Non-standard fonts detected",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Video missing captions",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Low color contrast ratio",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Table without headers",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Broken hyperlinks",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Outdated statistics referenced",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "UIC",
+        "expected_rule_id": "brand-006",
+        "detected": true
+      },
+      {
+        "evidence": "#1",
+        "expected_rule_id": "content-025",
+        "detected": true
+      },
+      {
+        "evidence": "!!!",
+        "expected_rule_id": "content-021",
+        "detected": true
+      },
+      {
+        "evidence": "Go Flames!",
+        "expected_rule_id": "tone-006",
+        "detected": true
+      },
+      {
+        "evidence": "85 percent",
+        "expected_rule_id": "content-018",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "[App header: retired \"Circle Campus\" logo from the old engineering website]\n[Hea…"
+      },
+      {
+        "rule_id": "access-007",
+        "ruleset": "accessibility",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "AGAIN",
+        "context": "…career, and our students are proving it AGAIN!!! Go Flames!  [Video: Welcome message …"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Welcome to the fall edition of the College of Engineering family newsletter at the University of Illinois Chicago.",
+        "context": "…the dean (three minutes), no captions]  Welcome to the fall edition of the College of Engineering family newsletter at the University of Illinois Chicago. Throughout the semester, our undergradu…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Throughout the semester, our undergraduates participate in project-based design courses, faculty-mentored research experiences and industry-sponsored competitions that prepare them for professional practice after graduation.",
+        "context": "… at the University of Illinois Chicago. Throughout the semester, our undergraduates participate in project-based design courses, faculty-mentored research experiences and industry-sponsored competitions that prepare them for professional practice after graduation. According to a 2011 survey of our gradu…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "According to a 2011 survey of our graduates, 85 percent of engineering students accepted a job offer within six months of commencement.",
+        "context": "…professional practice after graduation. According to a 2011 survey of our graduates, 85 percent of engineering students accepted a job offer within six months of commencement.  [Banner: light yellow text on a white …"
+      },
+      {
+        "rule_id": "access-005",
+        "ruleset": "accessibility",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "https://engineering.uic.edu/famly-events.",
+        "context": "… Find directions and parking details at https://engineering.uic.edu/famly-events."
+      },
+      {
+        "rule_id": "content-030",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "famly-events",
+        "context": "… details at https://engineering.uic.edu/famly-events."
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-02",
+    "source_communication_id": "COMM-00004",
+    "communication_type": "Research Brief",
+    "audience": "Faculty",
+    "channel": "Email",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 54.4,
+      "accessibility_score": 59.2,
+      "total_issues": 8,
+      "fk_grade": 12.3
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 0,
+        "content": 3,
+        "reading_level": 6,
+        "audience_tone": 0
+      },
+      "total_issues": 10,
+      "rule_ids": [
+        "brand-001",
+        "content-007",
+        "content-022",
+        "reading-001",
+        "reading-002",
+        "reading-003",
+        "reading-004"
+      ],
+      "brand_score": 78,
+      "accessibility_score": 68,
+      "status": "Major Revisions",
+      "status_reason": "A score is below 70 (68).",
+      "reading_grade": 13.6,
+      "reading_target": 10.0,
+      "word_count": 181
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Wrong brand colors used",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing UIC tagline",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Unapproved department logo",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "No heading hierarchy",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Form fields unlabeled",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Excessive paragraph length",
+        "ruleset": "reading_level",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "reading-004"
+        ]
+      },
+      {
+        "dataset_issue": "Broken hyperlinks",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Spelling/grammar errors detected",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Spelling/grammar errors detected",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "content-007"
+        ]
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "University of Illinois at Chicago",
+        "expected_rule_id": "brand-001",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "high",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "Subject: Research brief: Graduate fellowship outcomes and spring mentor call\n\n[H…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The Graduate College at the University of Illinois at Chicago is pleased to share outcomes from the 2025 Graduate Student Research Fellowship cycle.",
+        "context": "…nge and teal banner]  Dear colleagues,  The Graduate College at the University of Illinois at Chicago is pleased to share outcomes from the 2025 Graduate Student Research Fellowship cycle. The fellowship program, which supports …"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The fellowship program, which supports doctoral candidates whose dissertation projects cross departmental and disciplinary boundaries, received 214 applications this year, and the review committee, composed of faculty representatives from 11 colleges, recommended awards for 38 students whose proposa…",
+        "context": "…uate Student Research Fellowship cycle. The fellowship program, which supports doctoral candidates whose dissertation projects cross departmental and disciplinary boundaries, received 214 applications this year, and the review committee, composed of faculty representatives from 11 colleges, recommended awards for 38 students whose proposals demonstrated methodological rigor, feasibility within the funding period and a clear plan for disseminating findings to scholarly and community audiences. Awardees will recieve a stipend supplem…"
+      },
+      {
+        "rule_id": "content-022",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": ",",
+        "context": "…ies, received 214 applications this year, and the review committee, composed of f…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Awardees will recieve a stipend supplement and research funds, and each will be paired with a secondary faculty mentor from outside their home department, an arrangement that the the committee believes strengthens interdisciplinary training.",
+        "context": "…s to scholarly and community audiences. Awardees will recieve a stipend supplement and research funds, and each will be paired with a secondary faculty mentor from outside their home department, an arrangement that the the committee believes strengthens interdisciplinary training. Faculty who wish to serve as secondary …"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Faculty who wish to serve as secondary mentors for the spring cohort should review the expectations document and return the interest form before the deadline.",
+        "context": "…strengthens interdisciplinary training. Faculty who wish to serve as secondary mentors for the spring cohort should review the expectations document and return the interest form before the deadline.  Mentor interest form: ________ _______…"
+      },
+      {
+        "rule_id": "content-007",
+        "ruleset": "content",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "________ ________",
+        "context": "…re the deadline.  Mentor interest form: ________ ________ ________  Fellowship guidelines: https/…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-03",
+    "source_communication_id": "COMM-00041",
+    "communication_type": "Video Script",
+    "audience": "Faculty",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 62.8,
+      "accessibility_score": 40.8,
+      "total_issues": 6,
+      "fk_grade": 12.3
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 0,
+        "content": 2,
+        "reading_level": 3,
+        "audience_tone": 1
+      },
+      "total_issues": 7,
+      "rule_ids": [
+        "brand-002",
+        "content-011",
+        "content-021",
+        "reading-001",
+        "reading-003",
+        "tone-002"
+      ],
+      "brand_score": 75,
+      "accessibility_score": 85,
+      "status": "Major Revisions",
+      "status_reason": "7 issues found (more than 5).",
+      "reading_grade": 10.4,
+      "reading_target": 10.0,
+      "word_count": 155
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Unapproved department logo",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Non-standard fonts detected",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Brand voice inconsistency",
+        "ruleset": "brand",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "brand-002",
+          "content-021",
+          "tone-002"
+        ]
+      },
+      {
+        "dataset_issue": "Unauthorized stock photography",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Video missing captions",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "No heading hierarchy",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "Hey guys",
+        "expected_rule_id": "tone-002",
+        "detected": true
+      },
+      {
+        "evidence": "University of Illinois-Chicago",
+        "expected_rule_id": "brand-002",
+        "detected": true
+      },
+      {
+        "evidence": "!!",
+        "expected_rule_id": "content-021",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "Video script: Clinical Simulation Center orientation for faculty (90 seconds)\nCa…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "NARRATOR: Our high-fidelity manikins allow faculty to design and run realistic clinical scenarios for learners at every level of training, from first-year medical students through residents who are preparing for specialty board examinations.",
+        "context": "…stock website, not filmed at UI Health] NARRATOR: Our high-fidelity manikins allow faculty to design and run realistic clinical scenarios for learners at every level of training, from first-year medical students through residents who are preparing for specialty board examinations.  Scene three [Faculty member at the deb…"
+      },
+      {
+        "rule_id": "content-011",
+        "ruleset": "content",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "-fidelity manikins allow faculty to design and run realistic clinical scenarios for learners at every level of training, from first-year medical students through residents who are preparing for specialty board examinations.\n\nScene three\n[Faculty member at the debrief station]\nNARRATOR: Faculty can r…",
+        "context": "… filmed at UI Health] NARRATOR: Our high-fidelity manikins allow faculty to design and run realistic clinical scenarios for learners at every level of training, from first-year medical students through residents who are preparing for specialty board examinations.  Scene three [Faculty member at the debrief station] NARRATOR: Faculty can reserve debriefing rooms, request standardized patients and schedule a simulation technician through the centralized online reservation system at least two weeks before an educational session. To get started, email simcenter@uic.edu or call 312-555-0142."
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "NARRATOR: Faculty can reserve debriefing rooms, request standardized patients and schedule a simulation technician through the centralized online reservation system at least two weeks before an educational session.",
+        "context": "…[Faculty member at the debrief station] NARRATOR: Faculty can reserve debriefing rooms, request standardized patients and schedule a simulation technician through the centralized online reservation system at least two weeks before an educational session. To get started, email simcenter@uic.edu…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-04",
+    "source_communication_id": "COMM-00002",
+    "communication_type": "Email Newsletter",
+    "audience": "Students",
+    "channel": "Website",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 54,
+      "accessibility_score": 70.2,
+      "total_issues": 4,
+      "fk_grade": 11.9
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 0,
+        "content": 3,
+        "reading_level": 3,
+        "audience_tone": 0
+      },
+      "total_issues": 7,
+      "rule_ids": [
+        "brand-006",
+        "content-001",
+        "content-003",
+        "content-005",
+        "reading-001",
+        "reading-002",
+        "reading-003"
+      ],
+      "brand_score": 89,
+      "accessibility_score": 85,
+      "status": "Major Revisions",
+      "status_reason": "7 issues found (more than 5).",
+      "reading_grade": 10.5,
+      "reading_target": 8.0,
+      "word_count": 164
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Missing UIC tagline",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing disclaimer text",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "No keyboard navigation support",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing contact information",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "UIC",
+        "expected_rule_id": "brand-006",
+        "detected": true
+      },
+      {
+        "evidence": "April 15th",
+        "expected_rule_id": "content-005",
+        "detected": true
+      },
+      {
+        "evidence": "12pm",
+        "expected_rule_id": "content-003",
+        "detected": true
+      },
+      {
+        "evidence": "e-mail",
+        "expected_rule_id": "content-001",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "College of Nursing Student Newsletter, April 2026\n\nWelcome to the second half of…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "This issue covers summer clinical placements, simulation lab hours and the scholarship deadline.",
+        "context": "…ond half of the spring semester at UIC. This issue covers summer clinical placements, simulation lab hours and the scholarship deadline.  Summer clinical placements Summer clin…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Students who have not completed their compliance requirements, including immunization records and the annual background check, will not be eligible to receive an assignment until all documentation has been verified by the clinical placement team.",
+        "context": "…rough the student portal on April 15th. Students who have not completed their compliance requirements, including immunization records and the annual background check, will not be eligible to receive an assignment until all documentation has been verified by the clinical placement team.  Build your clinical schedule Drag your…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-05",
+    "source_communication_id": "COMM-00037",
+    "communication_type": "Internal Memo",
+    "audience": "Staff",
+    "channel": "Email",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 57.5,
+      "accessibility_score": 51.5,
+      "total_issues": 3,
+      "fk_grade": 11.4
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 0,
+        "content": 2,
+        "reading_level": 2,
+        "audience_tone": 0
+      },
+      "total_issues": 5,
+      "rule_ids": [
+        "brand-001",
+        "content-005",
+        "content-014",
+        "reading-002",
+        "reading-003"
+      ],
+      "brand_score": 86,
+      "accessibility_score": 90,
+      "status": "Minor Revisions",
+      "status_reason": "Lowest score is 86 (target 90+).",
+      "reading_grade": 9.0,
+      "reading_target": 10.0,
+      "word_count": 156
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "Incorrect UIC logo version",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "PDF not tagged for screen readers",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Inconsistent date formats",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "content-005",
+          "content-014"
+        ]
+      },
+      {
+        "dataset_issue": "Inconsistent date formats",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "University of Illinois at Chicago",
+        "expected_rule_id": "brand-001",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Starting Aug. 24, all travel reimbursement requests submitted by departments in the College of Liberal Arts and Sciences will move from paper forms to the university's online expense management system.",
+        "context": "… at Chicago\" wordmark and circle logo]  Starting Aug. 24, all travel reimbursement requests submitted by departments in the College of Liberal Arts and Sciences will move from paper forms to the university's online expense management system. Paper reimbursement forms received afte…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Paper reimbursement forms received after September 1st will be returned to the traveler for electronic resubmission.",
+        "context": "…ity's online expense management system. Paper reimbursement forms received after September 1st will be returned to the traveler for electronic resubmission.  Here is what changes for staff: - Subm…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-06",
+    "source_communication_id": "COMM-00254",
+    "communication_type": "Digital Signage Content",
+    "audience": "Students",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 88.2,
+      "accessibility_score": 53.4,
+      "total_issues": 5,
+      "fk_grade": 10.9
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 1,
+        "content": 1,
+        "reading_level": 2,
+        "audience_tone": 2
+      },
+      "total_issues": 7,
+      "rule_ids": [
+        "access-007",
+        "brand-006",
+        "content-011",
+        "reading-001",
+        "reading-003",
+        "tone-003"
+      ],
+      "brand_score": 86,
+      "accessibility_score": 88,
+      "status": "Major Revisions",
+      "status_reason": "7 issues found (more than 5).",
+      "reading_grade": 8.2,
+      "reading_target": 8.0,
+      "word_count": 82
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Unauthorized stock photography",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing language attribute",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "PDF not tagged for screen readers",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Reading level at Grade 10.9",
+        "ruleset": "reading_level",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "reading-001",
+          "reading-003"
+        ]
+      },
+      {
+        "dataset_issue": "Tone mismatch for target audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "tone-003"
+        ]
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "UIC",
+        "expected_rule_id": "brand-006",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "access-007",
+        "ruleset": "accessibility",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "QR",
+        "context": "…retes disponibles.  Slide four Scan the QR code for the event program (scanned PDF…"
+      },
+      {
+        "rule_id": "content-011",
+        "ruleset": "content",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": " code for the event program (scanned PDF).",
+        "context": "…tes disponibles.  Slide four Scan the QR code for the event program (scanned PDF)."
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-07",
+    "source_communication_id": "COMM-00246",
+    "communication_type": "Social Media Post",
+    "audience": "Faculty",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 62.5,
+      "accessibility_score": 60,
+      "total_issues": 4,
+      "fk_grade": 11
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 3,
+        "content": 0,
+        "reading_level": 0,
+        "audience_tone": 0
+      },
+      "total_issues": 3,
+      "rule_ids": [
+        "access-007"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 94,
+      "status": "Minor Revisions",
+      "status_reason": "3 issues found (at most 2 for approval).",
+      "reading_grade": 8.1,
+      "reading_target": 10.0,
+      "word_count": 67
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "No skip navigation",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing alt text on images",
+        "ruleset": "accessibility",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Jargon not defined for audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-007"
+        ]
+      },
+      {
+        "dataset_issue": "Jargon not defined for audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-007"
+        ]
+      },
+      {
+        "dataset_issue": "Broken hyperlinks",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": []
+  },
+  {
+    "demo_id": "demo-08",
+    "source_communication_id": "COMM-00160",
+    "communication_type": "Event Announcement",
+    "audience": "Students",
+    "channel": "Email",
+    "dataset": {
+      "status": "Major Revisions Needed",
+      "status_mapped": "Major Revisions",
+      "brand_score": 60.2,
+      "accessibility_score": 52.3,
+      "total_issues": 3,
+      "fk_grade": 12.6
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 5,
+        "audience_tone": 1
+      },
+      "total_issues": 6,
+      "rule_ids": [
+        "reading-001",
+        "reading-002",
+        "reading-003",
+        "tone-005"
+      ],
+      "brand_score": 98,
+      "accessibility_score": 75,
+      "status": "Major Revisions",
+      "status_reason": "6 issues found (more than 5).",
+      "reading_grade": 10.4,
+      "reading_target": 8.0,
+      "word_count": 157
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "No skip navigation",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Duplicate content detected",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Passive voice overuse",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Passive voice overuse",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "tone-005"
+        ]
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "Subject: Library tours for admitted students on June 26\n\nHello admitted students…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The University Library at the University of Illinois Chicago is hosting tours for admitted students during summer orientation.",
+        "context": "…s on June 26  Hello admitted students,  The University Library at the University of Illinois Chicago is hosting tours for admitted students during summer orientation. Tours will be led by librarians, and qu…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Tours will be led by librarians, and questions about research help, study spaces and printing will be answered by library staff.",
+        "context": "…ted students during summer orientation. Tours will be led by librarians, and questions about research help, study spaces and printing will be answered by library staff. It is recommended that comfortable shoe…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The University Library at the University of Illinois Chicago is hosting tours for admitted students during summer orientation.",
+        "context": "…tration page: no skip-to-content link]  The University Library at the University of Illinois Chicago is hosting tours for admitted students during summer orientation. Tours will be led by librarians, and qu…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Tours will be led by librarians, and questions about research help, study spaces and printing will be answered by library staff.",
+        "context": "…ted students during summer orientation. Tours will be led by librarians, and questions about research help, study spaces and printing will be answered by library staff.  Questions? Email libraryoutreach@uic.e…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-09",
+    "source_communication_id": "COMM-00144",
+    "communication_type": "Web Page",
+    "audience": "Students",
+    "channel": "Website",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 97.4,
+      "accessibility_score": 64.6,
+      "total_issues": 2,
+      "fk_grade": 11.2
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 3,
+        "content": 1,
+        "reading_level": 2,
+        "audience_tone": 0
+      },
+      "total_issues": 6,
+      "rule_ids": [
+        "access-007",
+        "content-022",
+        "reading-003"
+      ],
+      "brand_score": 98,
+      "accessibility_score": 84,
+      "status": "Major Revisions",
+      "status_reason": "6 issues found (more than 5).",
+      "reading_grade": 7.9,
+      "reading_target": 8.0,
+      "word_count": 139
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "Jargon not defined for audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-007"
+        ]
+      },
+      {
+        "dataset_issue": "Jargon not defined for audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-007"
+        ]
+      },
+      {
+        "dataset_issue": "Outdated statistics referenced",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The Office of the Dean of Students at the University of Illinois Chicago offers one-time grants to students facing an unexpected financial emergency.",
+        "context": "Student Emergency Fund  The Office of the Dean of Students at the University of Illinois Chicago offers one-time grants to students facing an unexpected financial emergency. Grants can help with rent, utilities, g…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Students enrolled at least half time who are making SAP and have already used their full COA adjustment through the financial aid office.",
+        "context": "…lls or emergency travel.  Who can apply Students enrolled at least half time who are making SAP and have already used their full COA adjustment through the financial aid office. Students with a pending Title IV disbur…"
+      },
+      {
+        "rule_id": "content-022",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": ",",
+        "context": "…he Student Services Building, Suite 3030, or call 312-555-0133."
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-10",
+    "source_communication_id": "COMM-00097",
+    "communication_type": "Faculty Newsletter",
+    "audience": "Faculty",
+    "channel": "Email",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 69.7,
+      "accessibility_score": 60.7,
+      "total_issues": 5,
+      "fk_grade": 13
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 3,
+        "reading_level": 4,
+        "audience_tone": 0
+      },
+      "total_issues": 7,
+      "rule_ids": [
+        "content-001",
+        "content-007",
+        "content-022",
+        "reading-001",
+        "reading-003",
+        "reading-004"
+      ],
+      "brand_score": 91,
+      "accessibility_score": 83,
+      "status": "Major Revisions",
+      "status_reason": "7 issues found (more than 5).",
+      "reading_grade": 12.5,
+      "reading_target": 10.0,
+      "word_count": 166
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "Missing disclaimer text",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Form fields unlabeled",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Low color contrast ratio",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Excessive paragraph length",
+        "ruleset": "reading_level",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "reading-004"
+        ]
+      },
+      {
+        "dataset_issue": "Missing contact information",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "e-mail",
+        "expected_rule_id": "content-001",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-001",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "document",
+        "matched_text": "(whole document)",
+        "context": "Subject: CADA Faculty News, October 2025\n\nDear faculty,\n\n[Header banner: light g…"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "This month the College of Architecture, Design, and the Arts (CADA) welcomes three new faculty members, launches the spring course proposal cycle and opens nominations for the college teaching award.",
+        "context": "…t gray text on a pale blue background]  This month the College of Architecture, Design, and the Arts (CADA) welcomes three new faculty members, launches the spring course proposal cycle and opens nominations for the college teaching award. The spring course proposal cycle now re…"
+      },
+      {
+        "rule_id": "content-022",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": ",",
+        "context": "…onth the College of Architecture, Design, and the Arts (CADA) welcomes three new …"
+      },
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The spring course proposal cycle now requires that all new studio and seminar proposals be submitted through the college curriculum portal rather than by e-mail to the associate dean, which means that faculty who intend to offer a new course in spring 2026 should consult with their school director b…",
+        "context": "…nations for the college teaching award. The spring course proposal cycle now requires that all new studio and seminar proposals be submitted through the college curriculum portal rather than by e-mail to the associate dean, which means that faculty who intend to offer a new course in spring 2026 should consult with their school director before the end of October, upload a syllabus that includes learning outcomes aligned with the accreditation criteria of the relevant program, and identify any specialized equipment, fabrication shop time or gallery space that the course will require so that the facilities team can plan accordingly. Proposals that arrive after the deadlin…"
+      },
+      {
+        "rule_id": "content-007",
+        "ruleset": "content",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "________ ________",
+        "context": "…wing cycle.  Teaching award nomination: ________ ________ ________  Thank you for everything you …"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-11",
+    "source_communication_id": "COMM-00100",
+    "communication_type": "Email Newsletter",
+    "audience": "Staff",
+    "channel": "Email",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 91.9,
+      "accessibility_score": 87.9,
+      "total_issues": 5,
+      "fk_grade": 9.7
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 4,
+        "content": 1,
+        "reading_level": 0,
+        "audience_tone": 0
+      },
+      "total_issues": 6,
+      "rule_ids": [
+        "access-001",
+        "access-005",
+        "brand-001",
+        "content-030"
+      ],
+      "brand_score": 88,
+      "accessibility_score": 83,
+      "status": "Major Revisions",
+      "status_reason": "6 issues found (more than 5).",
+      "reading_grade": 8.1,
+      "reading_target": 10.0,
+      "word_count": 144
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "Missing official template",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Links not descriptive",
+        "ruleset": "accessibility",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-001"
+        ]
+      },
+      {
+        "dataset_issue": "Links not descriptive",
+        "ruleset": "accessibility",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-001"
+        ]
+      },
+      {
+        "dataset_issue": "Links not descriptive",
+        "ruleset": "accessibility",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-001"
+        ]
+      },
+      {
+        "dataset_issue": "Broken hyperlinks",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing call-to-action",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing subject line (email)",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "University of Illinois at Chicago",
+        "expected_rule_id": "brand-001",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "access-005",
+        "ruleset": "accessibility",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "https://business.uic.edu/news/suply-chain-lab",
+        "context": "…tes and inventory decisions. Read more: https://business.uic.edu/news/suply-chain-lab  Faculty research in the news Professor…"
+      },
+      {
+        "rule_id": "content-030",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "suply-chain",
+        "context": "…ead more: https://business.uic.edu/news/suply-chain-lab  Faculty research in the news Profe…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-12",
+    "source_communication_id": "COMM-00261",
+    "communication_type": "Event Announcement",
+    "audience": "Staff",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 89.4,
+      "accessibility_score": 83.1,
+      "total_issues": 5,
+      "fk_grade": 9
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 1,
+        "reading_level": 1,
+        "audience_tone": 3
+      },
+      "total_issues": 5,
+      "rule_ids": [
+        "content-005",
+        "reading-004",
+        "tone-001"
+      ],
+      "brand_score": 83,
+      "accessibility_score": 98,
+      "status": "Minor Revisions",
+      "status_reason": "Lowest score is 83 (target 90+).",
+      "reading_grade": 4.5,
+      "reading_target": 10.0,
+      "word_count": 64
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Small font size (<12pt)",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing language attribute",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Video missing captions",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Inconsistent date formats",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "content-005"
+        ]
+      },
+      {
+        "dataset_issue": "Inconsistent date formats",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Tone mismatch for target audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "tone-001"
+        ]
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-004",
+        "ruleset": "reading_level",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": "Hey y'all! Staff Appreciation Day is gonna be epic, lol.\nThursday, July 16th, 11 a.m. to 2 p.m., Student Center East\nLunch, games and raffle prizes for all staff. RSVP by 7/9.\nTodos son bienvenidos. Wszyscy mile widziani.",
+        "context": "Hey y'all! Staff Appreciation Day is gonna be epic, lol. Thursday, July 16th, 11 a.m. to 2 p.m., Student Center East Lunch, games and raffle prizes for all staff. RSVP by 7/9. Todos son bienvenidos. Wszyscy mile widziani.  [Looping video from last year's event …"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-13",
+    "source_communication_id": "COMM-00020",
+    "communication_type": "Policy Update",
+    "audience": "Staff",
+    "channel": "Website",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 90.6,
+      "accessibility_score": 59.1,
+      "total_issues": 5,
+      "fk_grade": 10.2
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 0,
+        "audience_tone": 3
+      },
+      "total_issues": 3,
+      "rule_ids": [
+        "tone-004"
+      ],
+      "brand_score": 94,
+      "accessibility_score": 100,
+      "status": "Minor Revisions",
+      "status_reason": "3 issues found (at most 2 for approval).",
+      "reading_grade": 8.1,
+      "reading_target": 10.0,
+      "word_count": 129
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Video missing captions",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "No heading hierarchy",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing subject line (email)",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing contact information",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Tone mismatch for target audience",
+        "ruleset": "audience_tone",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "tone-004"
+        ]
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": []
+  },
+  {
+    "demo_id": "demo-14",
+    "source_communication_id": "COMM-00172",
+    "communication_type": "Event Announcement",
+    "audience": "Faculty",
+    "channel": "Website",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 83,
+      "accessibility_score": 64.2,
+      "total_issues": 2,
+      "fk_grade": 11.4
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 4,
+        "audience_tone": 0
+      },
+      "total_issues": 4,
+      "rule_ids": [
+        "reading-001",
+        "reading-002",
+        "reading-003"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 80,
+      "status": "Minor Revisions",
+      "status_reason": "Lowest score is 80 (target 90+).",
+      "reading_grade": 11.4,
+      "reading_target": 10.0,
+      "word_count": 128
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Wrong brand colors used",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Reading level at Grade 11.4",
+        "ruleset": "reading_level",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "reading-001",
+          "reading-002",
+          "reading-003"
+        ]
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": []
+  },
+  {
+    "demo_id": "demo-15",
+    "source_communication_id": "COMM-00043",
+    "communication_type": "Video Script",
+    "audience": "Students",
+    "channel": "Website",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 83.8,
+      "accessibility_score": 86.6,
+      "total_issues": 4,
+      "fk_grade": 9.2
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 1,
+        "accessibility": 0,
+        "content": 1,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 3,
+      "rule_ids": [
+        "brand-006",
+        "content-018",
+        "reading-002"
+      ],
+      "brand_score": 93,
+      "accessibility_score": 95,
+      "status": "Minor Revisions",
+      "status_reason": "3 issues found (at most 2 for approval).",
+      "reading_grade": 7.4,
+      "reading_target": 8.0,
+      "word_count": 123
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Unapproved department logo",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Brand voice inconsistency",
+        "ruleset": "brand",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "PDF not tagged for screen readers",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Outdated statistics referenced",
+        "ruleset": "content",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [
+      {
+        "evidence": "UIC",
+        "expected_rule_id": "brand-006",
+        "detected": true
+      },
+      {
+        "evidence": "96 percent",
+        "expected_rule_id": "content-018",
+        "detected": true
+      }
+    ],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "NARRATOR: Our students train in high-tech simulation labs and complete clinical rotations at hospitals across Chicago.",
+        "context": "…ents practicing in the simulation lab]  NARRATOR: Our students train in high-tech simulation labs and complete clinical rotations at hospitals across Chicago. In 2012, 96 percent of our graduates pa…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-16",
+    "source_communication_id": "COMM-00288",
+    "communication_type": "Social Media Post",
+    "audience": "Staff",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Minor Revisions Needed",
+      "status_mapped": "Minor Revisions",
+      "brand_score": 70.6,
+      "accessibility_score": 73.2,
+      "total_issues": 1,
+      "fk_grade": 11.3
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "reading-003"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 9.5,
+      "reading_target": 10.0,
+      "word_count": 68
+    },
+    "status_match": false,
+    "planted": [
+      {
+        "dataset_issue": "Low color contrast ratio",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Watch our year-end video to meet some of the students your support made possible, and consider a gift before Dec. 31 to support next year's scholars.",
+        "context": "…ent their work at national conferences. Watch our year-end video to meet some of the students your support made possible, and consider a gift before Dec. 31 to support next year's scholars. [Video thumbnail: title text in pale ye…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-17",
+    "source_communication_id": "COMM-00214",
+    "communication_type": "Faculty Newsletter",
+    "audience": "Staff",
+    "channel": "Website",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 82.8,
+      "accessibility_score": 94.6,
+      "total_issues": 1,
+      "fk_grade": 10.7
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 1,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 2,
+      "rule_ids": [
+        "access-002",
+        "reading-002"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 90,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 2 issue(s).",
+      "reading_grade": 9.5,
+      "reading_target": 10.0,
+      "word_count": 128
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Incorrect header formatting",
+        "ruleset": "brand",
+        "detectable": true,
+        "detected": true,
+        "rule_ids": [
+          "access-002"
+        ]
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "This year the university welcomed 112 new tenure-system and clinical faculty members across 15 colleges.",
+        "context": "… our faculty alums.  New faculty hiring This year the university welcomed 112 new tenure-system and clinical faculty members across 15 colleges. Many of them study health equity, data …"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-18",
+    "source_communication_id": "COMM-00182",
+    "communication_type": "Policy Update",
+    "audience": "Faculty",
+    "channel": "Email",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 88.4,
+      "accessibility_score": 100,
+      "total_issues": 2,
+      "fk_grade": 10
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 2,
+        "audience_tone": 0
+      },
+      "total_issues": 2,
+      "rule_ids": [
+        "reading-002",
+        "reading-003"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 90,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 2 issue(s).",
+      "reading_grade": 10.0,
+      "reading_target": 10.0,
+      "word_count": 150
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Missing official template",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Missing disclaimer text",
+        "ruleset": "brand",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The University of Illinois Chicago Environmental Health and Safety Office has revised the course to include new guidance on handling hazardous drugs and disposing of chemical waste.",
+        "context": "…ted chemical safety training each year. The University of Illinois Chicago Environmental Health and Safety Office has revised the course to include new guidance on handling hazardous drugs and disposing of chemical waste.  Principal investigators are responsibl…"
+      },
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Principal investigators are responsible for confirming that everyone in their lab finishes the training by Dec. 1.",
+        "context": "…drugs and disposing of chemical waste.  Principal investigators are responsible for confirming that everyone in their lab finishes the training by Dec. 1. Lab members who have not completed the …"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-19",
+    "source_communication_id": "COMM-00046",
+    "communication_type": "Press Release",
+    "audience": "Students",
+    "channel": "Email",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 89.3,
+      "accessibility_score": 81.4,
+      "total_issues": 2,
+      "fk_grade": 7.8
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 1,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 2,
+      "rule_ids": [
+        "content-022",
+        "reading-003"
+      ],
+      "brand_score": 98,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 2 issue(s).",
+      "reading_grade": 6.5,
+      "reading_target": 8.0,
+      "word_count": 123
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "No skip navigation",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "Inconsistent date formats",
+        "ruleset": "content",
+        "detectable": true,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Students in the College of Architecture, Design, and the Arts at the University of Illinois Chicago will show their work in a new exhibit at Gallery 400.",
+        "context": "…udent design show opens at Gallery 400  Students in the College of Architecture, Design, and the Arts at the University of Illinois Chicago will show their work in a new exhibit at Gallery 400. The show opens Friday, Oct. 9, with a f…"
+      },
+      {
+        "rule_id": "content-022",
+        "ruleset": "content",
+        "severity": "low",
+        "scope": "span",
+        "matched_text": ",",
+        "context": "…s in the College of Architecture, Design, and the Arts at the University of Illin…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-20",
+    "source_communication_id": "COMM-00253",
+    "communication_type": "Flyer/Poster",
+    "audience": "Faculty",
+    "channel": "Website",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 81.6,
+      "accessibility_score": 70.2,
+      "total_issues": 2,
+      "fk_grade": 8.6
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "reading-002"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 7.5,
+      "reading_target": 10.0,
+      "word_count": 91
+    },
+    "status_match": true,
+    "planted": [
+      {
+        "dataset_issue": "Flashing content detected",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      },
+      {
+        "dataset_issue": "No heading hierarchy",
+        "ruleset": "accessibility",
+        "detectable": false,
+        "detected": false,
+        "rule_ids": []
+      }
+    ],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "The Office of the Provost at the University of Illinois Chicago invites nominations for the 2026 Teaching Excellence Awards.",
+        "context": "…Excellence Awards Nominations are open  The Office of the Provost at the University of Illinois Chicago invites nominations for the 2026 Teaching Excellence Awards.  Who can be nominated: full-time facult…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-21",
+    "source_communication_id": "COMM-00011",
+    "communication_type": "Research Brief",
+    "audience": "Staff",
+    "channel": "Website",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 95.2,
+      "accessibility_score": 80.5,
+      "total_issues": 0,
+      "fk_grade": 9.3
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "reading-003"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 9.0,
+      "reading_target": 10.0,
+      "word_count": 157
+    },
+    "status_match": true,
+    "planted": [],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-003",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "A two-year study by researchers in the College of Education at the University of Illinois Chicago found that a summer tutoring program helped elementary students in Chicago Public Schools make measurable gains in reading.",
+        "context": "… tutoring program narrows reading gaps  A two-year study by researchers in the College of Education at the University of Illinois Chicago found that a summer tutoring program helped elementary students in Chicago Public Schools make measurable gains in reading.  What the study found Students who atte…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-22",
+    "source_communication_id": "COMM-00107",
+    "communication_type": "Annual Report Section",
+    "audience": "Staff",
+    "channel": "Email",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 89.1,
+      "accessibility_score": 89.2,
+      "total_issues": 0,
+      "fk_grade": 10
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "reading-002"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 9.5,
+      "reading_target": 10.0,
+      "word_count": 122
+    },
+    "status_match": true,
+    "planted": [],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "Last year, the College of Dentistry at the University of Illinois Chicago cared for more than 12,000 patients in its community clinics and mobile dental unit.",
+        "context": "…ity dental care  Community dental care  Last year, the College of Dentistry at the University of Illinois Chicago cared for more than 12,000 patients in its community clinics and mobile dental unit.  Our mobile unit visited 48 schools and…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-23",
+    "source_communication_id": "COMM-00294",
+    "communication_type": "Student Newsletter",
+    "audience": "Students",
+    "channel": "Website",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 100,
+      "accessibility_score": 100,
+      "total_issues": 0,
+      "fk_grade": 9
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 1,
+        "reading_level": 0,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "content-007"
+      ],
+      "brand_score": 95,
+      "accessibility_score": 100,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 7.1,
+      "reading_target": 8.0,
+      "word_count": 131
+    },
+    "status_match": true,
+    "planted": [],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "content-007",
+        "ruleset": "content",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "research\nResearch",
+        "context": "…nois Chicago.  Your student can do real research Research is not just for graduate students. Many…"
+      }
+    ]
+  },
+  {
+    "demo_id": "demo-24",
+    "source_communication_id": "COMM-00190",
+    "communication_type": "Video Script",
+    "audience": "Students",
+    "channel": "Social Media",
+    "dataset": {
+      "status": "Approved",
+      "status_mapped": "Approved",
+      "brand_score": 93.6,
+      "accessibility_score": 79.5,
+      "total_issues": 0,
+      "fk_grade": 8.5
+    },
+    "engine_result": {
+      "issue_counts": {
+        "brand": 0,
+        "accessibility": 0,
+        "content": 0,
+        "reading_level": 1,
+        "audience_tone": 0
+      },
+      "total_issues": 1,
+      "rule_ids": [
+        "reading-002"
+      ],
+      "brand_score": 100,
+      "accessibility_score": 95,
+      "status": "Approved",
+      "status_reason": "Both scores are 90+ with 1 issue(s).",
+      "reading_grade": 7.4,
+      "reading_target": 8.0,
+      "word_count": 70
+    },
+    "status_match": true,
+    "planted": [],
+    "slips": [],
+    "unplanned_engine_issues": [
+      {
+        "rule_id": "reading-002",
+        "ruleset": "reading_level",
+        "severity": "medium",
+        "scope": "span",
+        "matched_text": "NARRATOR: At the University of Illinois Chicago, the Honors College is a home base for curious students.",
+        "context": "…t the Honors College on Halsted Street] NARRATOR: At the University of Illinois Chicago, the Honors College is a home base for curious students.  [A student reads in a quiet study room…"
+      }
+    ]
+  }
+]

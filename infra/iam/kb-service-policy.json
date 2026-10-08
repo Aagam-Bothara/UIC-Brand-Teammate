@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeEmbeddingModel",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel"],
+      "Resource": "arn:aws:bedrock:${REGION}::foundation-model/${EMBEDDING_MODEL_ID}"
+    },
+    {
+      "Sid": "ListGuidelinesBucket",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::${GUIDELINES_BUCKET}",
+      "Condition": {"StringEquals": {"aws:ResourceAccount": "${ACCOUNT_ID}"}}
+    },
+    {
+      "Sid": "ReadGuidelineDocuments",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::${GUIDELINES_BUCKET}/${GUIDELINES_PREFIX}*",
+      "Condition": {"StringEquals": {"aws:ResourceAccount": "${ACCOUNT_ID}"}}
+    },
+    {
+      "Sid": "ReadWriteS3VectorsIndex",
+      "Effect": "Allow",
+      "Action": [
+        "s3vectors:GetIndex",
+        "s3vectors:QueryVectors",
+        "s3vectors:PutVectors",
+        "s3vectors:GetVectors",
+        "s3vectors:DeleteVectors"
+      ],
+      "Resource": "arn:aws:s3vectors:${REGION}:${ACCOUNT_ID}:bucket/${VECTOR_BUCKET}/index/${VECTOR_INDEX}"
+    }
+  ]
+}

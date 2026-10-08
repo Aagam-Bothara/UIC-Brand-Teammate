@@ -1,0 +1,3 @@
+# Voice and tone — Brand narrative introduction
+
+Our brand narrative not only communicates what we do as a university, but does so with heart and soul. This manifesto serves as our internal rallying cry, a voice and tone thermometer, and a solid starting point for any new piece of communication. How to use the narrative: To ensure that your writing is calibrated and aligns with the UIC voice, frequently consult the messaging map on pages 16-19 and refresh your thinking with the UIC brand narrative. The brand narrative is an excellent resource for developing voiced scripts and high-personality tactics. Note that the full narrative should never be used verbatim in external communications.

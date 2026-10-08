@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-10-08T12:00:00Z",
+  "sources": [
+    {
+      "source_id": "name-boilerplate",
+      "title": "Name and boilerplate",
+      "url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "category": "name",
+      "raw_path": "raw/name-boilerplate.md",
+      "chunk_count": 2,
+      "sha256": "4abc9d4d76a186badee9f23faa895d1a90507091bdf265bae5c9df6d5b69d9d5"
+    },
+    {
+      "source_id": "voice-tone",
+      "title": "Voice and tone",
+      "url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "category": "tone",
+      "raw_path": "raw/voice-tone.md",
+      "chunk_count": 2,
+      "sha256": "09bb44fe132a93eb98bea875f3b8ba3400c9882d1145e7f5143d7a0f953c87ad"
+    },
+    {
+      "source_id": "brand-strategy",
+      "title": "Brand strategy",
+      "url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "category": "audience",
+      "raw_path": "raw/brand-strategy.md",
+      "chunk_count": 2,
+      "sha256": "a5e14a830515886aba3be61468789167ff3be7c8aacfef2f2788a75ce6095415"
+    },
+    {
+      "source_id": "editorial-style",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "category": "editorial",
+      "raw_path": "raw/editorial-style.md",
+      "chunk_count": 4,
+      "sha256": "2fa7d6facd9c34d85b282efe794900362e3f4c6beb47632168df8b788860e5d4"
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "name-boilerplate-001",
+      "source_id": "name-boilerplate",
+      "category": "name",
+      "title": "Name and boilerplate",
+      "url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "section": "University name",
+      "path": "chunks/name-boilerplate-001.md",
+      "text": "# Name and boilerplate — University name\n\nOn first reference, use the full name University of Illinois Chicago. On second reference, UIC is acceptable. Do not use a comma or the word \"at\" in the university name, and never write U of I Chicago or UI-Chicago. Do not use \"the\" before UIC when it stands alone.\n",
+      "char_count": 308
+    },
+    {
+      "chunk_id": "name-boilerplate-002",
+      "source_id": "name-boilerplate",
+      "category": "name",
+      "title": "Name and boilerplate",
+      "url": "https://brand.uic.edu/messaging/name-and-boilerplate/",
+      "section": "Boilerplate",
+      "path": "chunks/name-boilerplate-002.md",
+      "text": "# Name and boilerplate — Boilerplate\n\nUse the approved boilerplate at the end of news releases: UIC is Chicago's only public research university, with 16 colleges and more than 34,000 students. Do not edit the boilerplate text.\n",
+      "char_count": 228
+    },
+    {
+      "chunk_id": "voice-tone-001",
+      "source_id": "voice-tone",
+      "category": "tone",
+      "title": "Voice and tone",
+      "url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "section": "Brand attributes",
+      "path": "chunks/voice-tone-001.md",
+      "text": "# Voice and tone — Brand attributes\n\nUIC's voice is bold, authentic and welcoming. We write with confidence but without exaggeration. Use clear, concise sentences and active verbs. Avoid jargon, cliches and excessive exclamation points.\n",
+      "char_count": 237
+    },
+    {
+      "chunk_id": "voice-tone-002",
+      "source_id": "voice-tone",
+      "category": "tone",
+      "title": "Voice and tone",
+      "url": "https://brand.uic.edu/messaging/voice-and-tone/",
+      "section": "Tone and readability",
+      "path": "chunks/voice-tone-002.md",
+      "text": "# Voice and tone — Tone and readability\n\nWrite in plain language at a conversational tone. Prefer short sentences and simple, familiar words so messages are readable by a broad audience. Aim for roughly an eighth-grade reading level.\n",
+      "char_count": 234
+    },
+    {
+      "chunk_id": "brand-strategy-001",
+      "source_id": "brand-strategy",
+      "category": "audience",
+      "title": "Brand strategy",
+      "url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "section": "Students",
+      "path": "chunks/brand-strategy-001.md",
+      "text": "# Brand strategy — Students\n\nKey audience: prospective and current students. Messages should emphasize access, opportunity and a supportive community in the heart of Chicago, and speak to students directly about next steps.\n",
+      "char_count": 224
+    },
+    {
+      "chunk_id": "brand-strategy-002",
+      "source_id": "brand-strategy",
+      "category": "audience",
+      "title": "Brand strategy",
+      "url": "https://brand.uic.edu/messaging/brand-strategy/",
+      "section": "Faculty and staff",
+      "path": "chunks/brand-strategy-002.md",
+      "text": "# Brand strategy — Faculty and staff\n\nKey audience: faculty and staff. Messaging highlights research excellence, collaboration across disciplines and pride in the campus community. Use a collegial, informative tone with colleagues.\n",
+      "char_count": 232
+    },
+    {
+      "chunk_id": "editorial-style-001",
+      "source_id": "editorial-style",
+      "category": "editorial",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "section": "Dates and times",
+      "path": "chunks/editorial-style-001.md",
+      "text": "# Editorial and style guide — Dates and times\n\nAbbreviate the months Jan., Feb., Aug., Sept., Oct., Nov. and Dec. when used with a specific date. Spell out March, April, May, June and July. Use a.m. and p.m. in lowercase with periods; use noon and midnight instead of 12 p.m. and 12 a.m. Do not use ordinals such as 1st or 2nd with dates.\n",
+      "char_count": 339
+    },
+    {
+      "chunk_id": "editorial-style-002",
+      "source_id": "editorial-style",
+      "category": "editorial",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "section": "Academic titles",
+      "path": "chunks/editorial-style-002.md",
+      "text": "# Editorial and style guide — Academic titles\n\nCapitalize formal titles such as professor, dean or chancellor only when they appear directly before a name. Lowercase titles that follow a name or stand alone. Use Dr. only for medical doctors on first reference.\n",
+      "char_count": 261
+    },
+    {
+      "chunk_id": "editorial-style-003",
+      "source_id": "editorial-style",
+      "category": "editorial",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "section": "Accessibility",
+      "path": "chunks/editorial-style-003.md",
+      "text": "# Editorial and style guide — Accessibility\n\nLink text must describe the destination; do not use click here or read more. Every meaningful image needs alternative text, and videos require captions. Use headings in order so screen reader users can navigate.\n",
+      "char_count": 257
+    },
+    {
+      "chunk_id": "editorial-style-004",
+      "source_id": "editorial-style",
+      "category": "editorial",
+      "title": "Editorial and style guide",
+      "url": "https://brand.uic.edu/messaging/editorial-and-style-guide/",
+      "section": "Inclusive language",
+      "path": "chunks/editorial-style-004.md",
+      "text": "# Editorial and style guide — Inclusive language\n\nUse gender-neutral language: chair instead of chairman, first-year student instead of freshman, and they as a singular pronoun instead of he or she. Use person-first language, such as a person with a disability.\n",
+      "char_count": 262
+    }
+  ]
+}

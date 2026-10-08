@@ -1,0 +1,3 @@
+# Voice and tone — Language libraries
+
+On this page, you’ll find curated language libraries — words and phrases built to spark headlines, sharpen copy and keep every piece of communication unmistakably UIC. The libraries are inspired by subthemes that live within the larger creative platform, “Make It Known.” Think of them as ways to stretch the UIC voice in fresh, unexpected directions, and as tools that protect the longevity of our creative hook by giving writers more to work with than a single phrase. Like UIC itself, this is a living resource. Add to it. Mix the libraries together. The more you write into the brand, the more distinctly it becomes ours.

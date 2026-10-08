@@ -1,0 +1,3 @@
+# Editorial and style guide — Introduction
+
+Campus units at UIC each have diverse audiences and unique messages that must be communicated across various media. However, all of these varied marketing and communications efforts have one common link: The message is most effective when it is delivered with clarity and consistency. Likewise, every collection of UIC publications — whether from a single unit or from various offices — will be more authoritative in a reader’s mind when each piece reinforces the voice of the others with a consistent style. Most of the entries in this writing guide are consistent with the Associated Press Stylebook.

@@ -1,0 +1,5 @@
+# Name and boilerplate — Boilerplate > Long
+
+Named an Opportunity University by the Carnegie Foundation, UIC is a nationally recognized engine of social mobility, ranked first in Illinois and No. 17 nationally among public universities in U.S. News & World Report Best Colleges.
+
+Located in the heart of Chicago, UIC is the city’s largest university and only public research institution. With regional campuses in Peoria, Rockford, Springfield and Urbana, UIC has 16 academic colleges serving more than 37,000 undergraduate, graduate and professional students. More than half of our students are first-generation, while 56% are Pell-eligible. Our hospital and clinics provide care to the most underserved communities in Chicago. And nearly half a billion dollars in annual research funding supports discovery and provides solutions to complex problems.

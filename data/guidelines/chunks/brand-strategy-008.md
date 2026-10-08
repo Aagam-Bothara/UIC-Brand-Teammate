@@ -1,0 +1,3 @@
+# Brand strategy and messaging — Brand positioning and brand essence
+
+The UIC positioning includes two strategic tools: the brand essence and the positioning statement. The brand essence is the heartbeat of the brand — a few powerful words that capture the spirit of UIC. The positioning statement is a concise, strategic summary of who UIC is, what we stand for and what makes us different from other universities.

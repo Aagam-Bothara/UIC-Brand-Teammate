@@ -1,0 +1,11 @@
+{
+  "text": "Subject: CAREER FAIR!!!\n\nHey guys! The University of Illinois at Chicago Spring Career Fair is happening on March 5th from 12pm to 4pm in Student Center East. Over 100 employers will be there. Click here to register: https://careers.uic.edu/fair\n\n[image: career-fair-flyer.png]\n\nDon't miss it!",
+  "audience": "Students",
+  "channel": "Email",
+  "rulesets": [
+    "brand",
+    "accessibility",
+    "reading_level"
+  ],
+  "top_k": 8
+}
